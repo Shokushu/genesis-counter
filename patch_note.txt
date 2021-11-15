@@ -1,0 +1,742 @@
+﻿
+====================
+Patch Note
+====================
+release 1.44b 9/5/2021
+-OBS trigger window will now regard "BroadcastCustomMessage" as the "realm" value instead.
+
+release 1.44a 8/2/2021
+-There is now an edit window to edit the OBS event listener.
+-Buffer: Exists				New command, tells you if a buffer exists or not.
+-Get Alternate Account Info New command, get various infos on other linked account
+-Stack: Concat				New command, combine 2 stack together
+-small bug fixes on the transmitter
+-Microsoft visual c++ 2010 DLL are now included with lioranboard, this should fix any problem some people were having with lioranboard not writting to its own folder
+-Can now pull User ID from raid with Math: Trigger Pull
+-Can now more easily set alternate account through the link twitch account window.
+-Removed the auto resize that happened when the window size was not divisible by 2 causing maximized window to be forced out of it.
+-Added a donate button, many people have been asking me for a donate link so there it is.
+
+release 1.44 7/12/2021
+-New group ID system, you can add a group ID to a button. buttons with the same group ID can not happen at the same time and will be put in the same queue
+-greatly increased the amount of characters one can type in a command box.
+-Added abs() support to the complex math system.
+-Math: pull filter visibility and Math: pull source value have been renamed to OBS pull filter visibility and OBs pull source value.
+-Math: Trigger Pull now allow to pull User ID for most trigger, and redeem now has display name
+-New Dev	 mode for re-installing extension with 1 click with no popup. Right click the Reset button in options 10 times to activate.
+-New permanent variable mouse_x and mouse_y
+-new permanent variable transmitter_is_connected  0=disconnected 1=connected
+-added Cost and Image to Redeem Math: Trigger Pull
+-Fixed a bug in the deck editor window that could cause some ghost buttons to be present and impossible to remove.
+-Fixed a bug where you couldn't select some operator for some new math commands
+-Fixed a bug where adding something to a stack with to high of a position would add it as a string.
+-Fixed a bug with deck name that # wouldn't display properly.
+-Fixed a bug with switch deck window where you couldn't select decks with # in the name.
+-Fixed a crash with the stream deck for PC where activating buttons while minimized could crash the stream deck(no changes were made to the android stream deck).
+-Fixed a crash with the receiver when the transmitter sent too much data and some packet would get cut off ended up in a reading outside of buffer error.
+-Motion: Alpha Filter has been change to let float go through, obs 27.0 and up require 0 to 1 instead of 0 to 100. any NEW color correction filter you create will require 0 to 1. the old one are still 0-100
+-You can now listen for OBS events, Explained in the readme.
+-New extension command "ReplaceStack" to replace a value in a stack.
+-File: Delete Section		New Command, Allows to delete a whole section in a  saved file
+-File: Delete Key			New Command, Allows to delete a key in a given section from saved file
+-File: Section Exists		New Command, Check if a section exists within a saved file
+-File: Key Exists			New Command, Check if a key within a given section exists
+-Get File SHA1 Hash			New command, return the SHA1 hash of a given file
+-Block Button				New Command, Block a button id or Group id to be blocked so they cant happen
+-Get Date					New Command, return the current date with everything you wish to be included
+-Math: Get Variable Type	New Command, return what type of variable is the given variable.
+-Various new buffer commands, really good for generating data, for more advanced users
+-Buffer: Create				New Command, Create a buffer
+-Buffer: Delete				New Command, Delete a buffer
+-Buffer: Load				New Command, Load file to a new buffer
+-Buffer: Save				New Command, Save buffer into a file
+-Buffer: Set Size			New Command, Change the byte size of a buffer
+-Buffer: Get Size			New Command, Get the size of a buffer
+-Buffer: Set Position		New Command, Set the read/write head position of a buffer
+-Buffer: Get Position		New Command, return the position of a read/write head of a buffer
+-Buffer: Read				New Command, Write data to a buffer
+-Buffer: Write				New Command, Read data from a buffer
+-Buffer: Peek				New Command, write data at a given position 
+-Buffer: base64 Encode		New Command, turn a buffer into a base64 string
+-Buffer: base64 Decode		New Command, turn a base64 string into a buffer
+-Buffer: SHA1 Hash			New Command, return a hash of a buffer
+
+-Transmitter has been optimized, if you wish to install more extension or use the new math trigger pull you will need to switch to the new transmitter.
+	-UI is now fully responsive. Icons and abbreviations are used for very small sizes.
+	-There is now one single default dark theme. 
+	-Installed extensions checkboxes are collapsible. 
+	-Added a button Hide All Tabs. 
+	-Transmitter remembers your last active tab through reloads.
+	-Basic Alerts tab has been renamed to Twitch Triggers.
+	-Test Chat Message button correctly sends subscriber badge (can specify tier and month).
+	-New default extension Get Profile Picture.
+	-New Status tab: 
+	-1. Version - check whether you're on the latest versions (StreamDeck current version will not be detected) 
+	-2. Appearance - switch between tabs and no tabs 
+	-3. Message logging - enable/disable message logging for Receiver (sent and received), Pubsub (received) and Twitch Chat (sent and received). Useful for debugging. It remembers the state through Transmitter reloads. If you enable it, and will keep logging all messages until you disable it again. 
+	-Version and Message Logging are two separate uninstallable extensions.
+	-jQuery library has been completely removed. 
+	-Transmitter now automatically loads the following libraries: Bootstrap@5.0.2, Moment@2.29.1, Socket.io@2.2.0, OBS-websocket@4.0.2. 
+	-Added global helper functions for everything you can send to LioranBoard. 
+...
+
+Release 1.43a 3/9/2021
+-Statement: re-enable should now work properly when using variables for the amount and will also repeat forever if the amount is 0 or under
+-Some command were sending useless packets to obswebsocket, such commands have been stoped from doing so. https://www.youtube.com/watch?v=tA8LjcpjjKQ
+...
+
+Release 1.43 3/8/2021
+-The receiver window is now resizable.
+-The Commands window is now completely revamped, i'm sure you will love it.
+-Command window now support Undo and redo
+-Raid alert as been fixed from version 1.42
+-removed the insert function from all text box
+-The default deck have been slightly remade, the Websocket exemple is gone and has been replaced with OBS control and Twitch trigger examples. Thanks Melonax for those examples.
+-Math: Trigger Pull is now a lot easier to use, you can just select what you want from different triggers.
+-Math: Trigger pull Chat color name now automatically swap red and blue as it should be.
+-Math: trigger pull for subs can now tell you if its a community sub or not.
+-When you create a button, you now have to do an extra click to see all the premade buttons since some people thought that's all there was to LioranBoard, so it is no longer in the forefront.
+-You can now uninstall extensions from a selected transmitter
+-Some changes were made to the transmitter to give the test button more options to play with, thanks to Christinna.
+-fixed a small issue in the transmitter where gift sub amount trigger would always show Tier 2, update your transmitter if you care about "Sub amount" trigger math trigger pull for subplan.
+-new transmitter command to lioranboard "AppendStack" check the extension documentation for that.
+-Twitch: Open Whisper now works on True and false accordingly, whispers are off by default.
+-Parameter "small math" has been greatly improved so lets call them Complex math from now on. If you didn't know before, you could put (2+3) in a parameter box to do some math
+	As long as the box start with ( and ended ), it performed the small math, This was very limited,it would only take numbers and only 2.
+	it can take anything now, Something as complex as this would work. (2+round($FFF*2.1)mod 7 ^ 1 + variable)
+	it accepts *,+,/,-,^,|,&,$ for hex,round(),ceil(),floor(),mod,div,() inside () and straight up variable names and [x]stackname values
+	the whole box must still start with ( and end with ). this can be done on any parameter box and a maximum of 256 characters is allowed
+	Keep in mind the bigger you make it the slower it is to process.... but hey computers are suposed to be super fast these days right?
+	You can also include stacks written as such [slotnumber]stackname, inside [] can be some complex math [1+variable*10]stackname will work fine
+-Commands Skip if, Redo if, End if, Repeat previous have been Deprecated(they will still work but have been replaced by better one).
+	In the deck edit window there is a check box at the top now that you can turn on to replace commands from a button.
+	The replacement will happen when you open the command window of a button. and will only be fully applied when you clicked Done and done again.
+	Commands Replaced by the following one
+
+-Statement: If					New command, (replace skip if)Works like a programming language If statemenet, creates an else statement along with it.
+-Statement: Re-enable			New command, (replace Redo if)Work same as Redo if but with different options
+-Statement: Repeat 				New command, Repeat commands immediatly
+-Statement: Exit if				New command, (Replace End if)same as end if but take variable names different
+-Statement: Break if			New command, Will exit a Re-enable or Repeat statement
+-Statement: And 				New command, Put this right under a if statement, re-enable, Exit or Break to give it extra checks. can put multiple of them and combine with Or
+-Statement: Or 					New command, Put this right under a if statement, re-enable, Exit or Break to give it extra checks. can put multiple and combine them with And
+-Deprecated commands will all be all under the "-Deprecated- >" option in the command list
+
+	If the box of a parameter says "Var./real/string" or has a * in the name that means you can put  "some text" for a string(or with ')   -.012 for a real $A0 for a real in hex number.
+	[x]stackname to load a stack value directly. you can do complex math inside the [x] such as [1+variable*2]
+	and anything else for a variable.
+	Variables should always start with a letter or _ and only contains letters, numbers and _
+	Your variable can be   Hello_123    or    _123_hello     but not    123_Hello
+
+-Command Math: Change Variable / Math: Variable to Variable / Stack: Add / Stack: Replace / Stack: Find    now all have a new improved version
+	Old one are still available in the deprecated section 
+	you will see them as (new) in the command list
+	Math: variable to variable is no longer needed
+	the only change is that the value box now takes real/string/variable and the real/string box is removed for the stack one
+	
+
+
+
+...
+
+Release 1.42 2/15/2021
+-this is a big update so let me know of any new problem that arise on discord.
+-THE TRANMISSTER HAS BEEN REVAMPED YOU WILL NEED TO USE THE NEW ONE.
+	all extension are still compatible you just need to reinstall them
+-if you were using LB notification system, Delete the deck and install the new one. Now support Streamlabs donation with the Streamlab extension(sold seperatly)
+-Twitch: Open Whispers			New command, will turn on whispers, as far as i know twitch offers no way to turn them off once they're off.
+-Twitch: Join/Leave Channel		New command, you can now join and leave which ever channel you want
+-Twitch: Alert Message			New command, show a small yellow message at the bottom of the receiver
+-Twitch: Popup Message			New command, Show a popup message
+-Twitch: Copy Local File		New command, For extension makers
+
+-All the following commands will require downloading OBSWebsocket 4.9.0
+-Trigger OBS Hotkey Name		New Command, This will activate an OBS hotkey without having to press the hotkey
+-Trigger OBS Hotkey Sequence	New Command, This will activate an OBS hotkey without having to press the hotkey
+-Play/Pause Media				New Command, play or pause a media/vlc source
+-Restart Media					New Command, restart a media/vlc source
+-Stop Media						New Command, Stop a media/vlc source
+-Next Media						New Command, Go to the next vlc source media
+-Previous Media					New Command, Go to the Previous vlc source media
+-Set Media Time					New Command, Move time bar in the media/vlc source
+-Create Source					New Command, Create a new source in OBS selected scene
+-Create Scene					New Command, Create a new scene in OBS
+-Set Transition Settings		New Command, set the settings of a specifict transition
+-Set Transition Bar Position	New Command, Set the Transition Bar position
+-Release Transition Bar			New Command, release the Transition Bar
+-Stack: Alphabetical Order		New command, reorder a stack in alphabetical order
+
+-Math: Trigger Pull now can return which channel the message was sent from, If its a whisper it will simply return w
+-Ping time out should work fine with OBSwebsocket now.
+-You will now get a warning message for turning off twitch link scopes that you shouldn't turn off at the risk of lioranboard crashing.
+-New permanent variable obs-studio-version and obs-websocket-version, they will be empty string when OBS is not connected.
+-twitch chat now goes through the transmitter in WSS connection instead of directly from the receiver.
+-Installing an extension will no longer ask you to select a transmitter if it only contains a deck.
+-installing an extension will no longer generate a deck if a deck of the same name already exists.
+-The last folder you were in when selecting specifict file will now be remembered.
+-!transmitterdisconnected is now an extension trigger when the transmitter disconnects
+-Fixed a crash that happened if you alt tabbed out of lioranboard while selecting text
+-Font will look smoother now.
+-Can now change button id of a button by right clicking it and selection Buttin ID
+	Can include any characters, max of 10 characters
+-Trigger Cutton command and Trigger shortcuts will now trigger the button ID
+	if the button does now exists, they will do a normal extension trigger instead with whatever is in the box
+
+-Cool stuff for extension makers
+-PopupMessage now a command you can send to lioranboard
+-Installation of extension like the LB notification system have been greatly simplified and you can now make your own.
+-Transmitter now reloads on extension install
+-transmitter now has tabs and themes you can use, Thank Christinna for working on the transmitter
+-you can now included an unlimitted amount of value, for math trigger pull when using the ExtensionTrigger transmitter command
+-Added a way to execute certain things on install. Look inside the how to make extensions.txt and look for "install force check"
+...
+
+Release 1.41c 1/31/2021
+-Fixed a bug where points redeem with message stopped working.
+-Transmitter now has a refresh button, thanks Christinna for that
+-Applied Dark mode to the transmitter, thanks theotherlonestar for that
+
+Release 1.41b 1/28/2021
+-Security update, it would be a good practice to download this update.
+
+Release 1.41 1/21/2021
+-String: Escape		New Command, Will turn a string into a escaped string ready to be put in a json string.
+	If you send user's text over to anything outside Lioranboard, you should escape them to prevent exploit by users
+	such as sending text message to a text source
+-fixed a bug where button trigger throught the "Trigger Button" command or stream deck wouldn't return the right thing if string: get trigger type was used.
+-chat client will now ping the server periodically regardless if a ping command was send by the server. Might solve some disconnection some people are having.
+-reload deck and loading decks on the stream deck should be faster in general
+-Fixed a bug where File: Save Value sometimes would think the value was not a real and would not save, There is now a message that says if it failed to save.
+-Fixed the font and a gift sub bug for the LB notification system Thanks Melonax for fixing that for me.
+	You can just delete the LB notification deck and reinstall it normally.
+
+
+Release 1.40b 12/4/2020
+-Added a new way to select Macro keys that are unavailable on most keyboard such as F13 to F32, sound control and more.
+	When you try create a macro, there will be a button you can press to select many usefull keys that might not
+	be on your keyboard, 
+-updated keys.ini so all keys will show up fine, lets me know if you find any unknown keys.
+MINOR STREAM DECK UPDATES
+-Android version, When putting your tablet in sleep mode for a long period of time, lioranboard will now detect that and
+	reconnect instantly when you open it back up
+-Fixed a bug on PC where the stream deck would crash if it tried to create a surface size 0
+
+Release 1.40a 12/1/2020
+-Math: Trigger Pull for chat can now pull user name(2),emotes info(3),Badges info(4)
+	(IF YOU WERE GETTING WILD CARD using math: trigger pull for chat message, you will have to use String: pull wildcard instead)
+-Alternate Accounts were only connecting the first time that the transmittered connected. They will now reconnect everytime.
+-Fetch OBS data had some trouble getting some variable name that had dots in them such as the following JSON
+	{"settings":{"Filter.Transform.Rotation.X":123}}
+	Naturaly you'd try to search for settings.Filter.Transform.Rotation.X and lioranboard would try to look for those.
+	but they dont exist, so now what you can do instead if this kind of thing happen is search for settings.(Filter.Transform.Rotation.X)
+	If lioranboard sees .(  it will ignore all dots until next ). is found and remove the () from both sides
+
+
+Release 1.40 11/24/2020
+-String: Wildcard pull		new command, if you were using math: trigger pull to pull wildcards, move to this one or you will experience problem in the futur updates
+	(although most wild card will still work using math: trigger pull, the one for Channel point with message will no longer work, so you will need to update those right away)
+	You can press F12 and it will tell you where you might have used wildcards, not 100% accurate but it's a good way to know if you're forgetting anything.(will remove this later)
+-String: Get Trigger Type	New command, will return what type of trigger, triggered the button.
+-Channel point trigger, math: trigger pull can now return the reward id and the redeem id
+-Channel point trigger, you can now put a single * in the box to allow all triggers to active it.(this is not a wild card though)
+-Updated the stream deck, YOU WILL NEED TO USE THE NEW ONE both android and pc
+-fixed a wrong sound used for the stream deck android app, sorry for anyone that got this update
+-Fixed any URL openning through lioranboard when openning in chrome would have an unwanted %22 in front of it
+-Added a way to make drop down boxes in the Extension system by setting boxname to  name|option1|option2|  so on(if you use an extension that does this you will need to use this version for it to work)
+-Also added a way to force a box to a certain text how you select an extension, just setting the boxname to   name|option   Will not be a drop box but simple set the box to whatever is after the |
+-Added a way to unlink your twitch account without deleting connect.ini.  Button is in the Link Your Twitch window
+-Added a way to customize every scope LioranBoard gets from the authentication.
+-Added a way to delete a whole stack from an extension with message "DeleteStack"
+-Added a way to export/import an entire button with a JSON string, so you can Reimport it, allowing the possibility to exchange buttons with others easily
+-Send to Extension list will now be sorted in alphabetical order
+-Send to Extension boxes that are counted as real variable and have their boxes left empty will now be regarded as 0 when send over
+
+release 1.39b 8/12/2020
+-fixed a bug when sending message to the transmitter with special characters like é and such that would close the connection.
+
+release 1.39a 8/2/2020
+-added a save/load variable option in the template
+-added a small text at the bottom to say if files are saved in appdata or local receiver folder
+-expiration token message is now a pop up
+
+release 1.39 - 8/2/2020
+-added a few special extension trigger for chat moderation
+	!ban  when someone gets banned,  math trigger pull    1=name of the mod,   2=name of the person who got banned
+	!unban  when someone gets un banned,  math trigger pull    1=name of the mod,   2=name of the person who got unbanned
+	!timeout  when someone gets banned,  math trigger pull    1=name of the mod,   2=name of the person who got timed out    3=duration in seconds of the timeout
+	!untimedout  when someone gets un banned,  math trigger pull    1=name of the mod,   2=name of the person who got untimed out
+	!clearchat when a mod clears the chat,  math trigger pull    1=name of the mod,
+-new init extension trigger
+	!reinitializing			When decks are reloaded, this happens at same time then !initlioranboard and everytime you click done when saving a deck or moving decks
+-added the scope   whisper:edit to the twitch link url, so that way you can send whisper message through the command twitch chat message
+	let me know if there is any missing scope for twitch side so everything you can imagine works in lioranboard
+-Trigger Button command now has a box for hidden delay, do not use this unless you know what it does.
+-!transmitterconnected and !transmitteralways extension trigger now happen with a slight delay to give time to the transmitter to send all its extension
+-You can now link different account at the same time, incase you want to make a bot(check in the read me to know how)
+-Twitch: Chat Message now has an extra box to specify which channel to send the message to, leave blank for channel of the linked account.
+-added 2 extension to the main transmitter, Get view count and get channel id extensions
+-Greatly change the button creation window. Can now choose between multiple premade buttons.
+-Trigger: button now has an extra box to have an hidden delay. the delay is undetectable and uncancelable.
+-The receiver now has a tutorial.
+-Fixed a bug where you could trigger the same button multiple times with 1 chat command or over lapping bits numbers and such. now the button will only trigger once.
+-LioranBoard will now notify you when something like your antivirus suddenly started blocking it.
+...
+
+release 1.38 - 7/12/2020
+-Compare: Redo Previous if     new command, same as redo if but redo the command above in the list of commands.
+-Math: Clamp     new command, allows you to clamp a variable
+-the files for your decks now create a backup on save.
+-"Value name" will now be refered to as "Variable" as it should, so there might be some left over "Value name" around.
+-fixed Bits trigger pull now return the name of the person rather than the your name
+...
+
+release 1.37 - 6/22/2020
+-New Twitch trigger for amount of gifted subs
+-added new test button to the transmitter for raids/host/gift sub amount, warning gift sub amount will also send the amount of normal gift sub along with it. i suggest using the new one.
+-String: Format     new command, Allows you to format a string to a specifict width
+-String: Letters    new command, remove all non letters from a string
+-Math: Trigger pull can now get subber/gifted's display name, host/raid display name, chat message is now display name by default, no login name
+-Math: Trigger pull for sub months now work on resubs
+-Command Parametters now allow for a single simple math exemple   (3+4) or (4*2) or (4*/$value$/), can only be +-*/ and can only contain 1, () must be at the start and the end to trigger this
+-Command parametter /$value_name$/ wild card inserts are now more precise when dealing with decimal points.(was 2 decimal max, now is 4)
+-You can now hold page up and down in the command edit window to browser faster
+-Included a FULLY ANIMATED notification board(Followers/bits/subs/raid/host) that comes with lioranboard(needs to be installed as an extension)
+	Click Install extension inside lioranboard and select "LioranBoard Notification System.lbe" inside LB notification system folder, follow the steps and it should work.
+	you can use the transmitter to test out the alerts. or even turn on TTS(requires the transmitter to run through chrome, not browser source)
+-Follower Alert extension as been improved to not show a follower again if they unfollow and refollow or show old follower is someone unfollow.
+	you can either reinstall if from the extension itself or use the new transmitter
+-You can now record Twitch chat and twitch notification packets, simply open connect.ini and under connection add record_chat="1" and record_pubsub="1" (this records the raw packet)
+...
+
+release 1.36 - 6/6/2020
+-Text Source Change Text renamed to Text GDI+ change text
+-Freetype 2 change text new command Change the text of a freetype source
+-Math: Hex to Real, new command turn an hex string into a real
+-Save Replay Buffer, new command not sure why that wasn't ther already
+-String: Count new command return the amount of occurence of a certain string within a string.
+-Clear button new command allows you to clear all of certain id buttons
+-Comment 	new command, only exist to add a comment to explain your scripts, doesn't do anything. Will clearly marked red in the command list
+-OBSwebsocket 4.8.0 has been released, for the following commands you will need to update it. Text source change text should now work with 4.8.0 without having to remove _v2
+-Change Scene Transition new command Allows you to set a transition of a scene temporarily
+-Remove Scene Transition new command Removes the temporary scene transition set
+-Change Audio Monitor Type new command to be able to change the monitoring type of an audio source
+
+-Fixed a bug that happened sometimes if for some reason obswebsocket send some extra message before sending all scene and source list that would crash lioranboard
+-when naming a button, pressing cancel doesn't remove the name anymore.
+-added a small moving animation when moving a command up or down
+-There is now a message that shows OBS and OBSwebsocket version on connect.
+-Math: Trigger Pull can now get Bits message,sub message and Subs month count(not consecutive)
+-New Shortcut window to set keyboard or gamepad shortcut, gamepad one is not that great it only supports legacy controller which might be deprecated on windows 10
+-When you connect to OBSwebsocket, it will now say the ip and port you're connecting to.
+-Insert,Delete,home,end now all work as they do in other text boxes
+-button id and name now shows up in the command edit window.
+-previous_scene is now a permanent variable, since a lot of people seem to need it. so might aswell make that automatic
+-new Extension Trigger for Leave scene and Enter scene
+	!enterscene Scene Name		will happen when you switch scene, with the name of the scene you're moving to
+	!leavescene Scene Name		will happen when you switch scene, with the name of the scene you're moving out of,
+	in both cases math trigger pull 1 will return the transition name and 2 will return the duration in MS of the transition
+...
+
+release 1.35 - 5/26/2020
+-Added a stack system to commands(list struture or array if you prefer) with a few new commands
+-Stack: Add Add a value to the a stack, create it if does not exists
+-Stack: Replace Change a value in a stack to a new one
+-Stack: Pull Pull a value from the stack, deleting it from the stack
+-Stack: Peek read a value from the stack, without deleting it
+-Stack: Find find the first instance of a value in a stack
+-Stack: Get Size Get the size of a given stack
+-Stack: Random Get a random value from the stack
+-Stack: Shuffle randomize a stack
+-Stack: Clear delete an entire stack
+-Stack: Stringify return a string of the entire stack
+-Stack: Parse turn the stringified  stack into a stack
+-To go with the stack system, a few extension javascript commands have been added, look inside the extension/readme.txt to find out more.
+-Fixed a bug if you have some " in description or other places inside your bio on twitch that prevented you from linking your twitch account correctly
+-You no longer need to hold tab to see the value window, its now a on and off feature.
+-You can also now search value in the value window by typing, typing the exact name of a stack will show you its content
+-Twitch trigger icon in the edit window will now show a Q when Add to Queue is enable
+-Creating a new button will now ask for the name right away.
+-Clicking the button ID in the select menu in edit mode will now copy the id to clipboard
+-Fixed a bug that crashed lioranboard, if connected to OBS and you deleted a source that was inside a group
+-Math: Pull source value  for volume will no longer return a float. just 0-100
+-When a change is being made to the way files are being writen, lioranboard will now notify you.
+-Added a Case sensitive option to twitch chat message trigger
+-Fixed a bug where empty squares and button resized region would get their own button ID,
+	this might have caused problem by changing button ids for other buttons randomly when moving decks or resizing decks
+...
+
+
+release 1.34c - 5/19/2020
+-fixed wild card with just * that didn't work
+-Greatly cleaned the whole project, let me know if it runs smoother. or if i deleted script that were still used by accident
+...
+
+release 1.34b - 5/19/2020
+-Subs were crashing lioranboard, should be fixed now, you will need to update your transmitter if you want to use test sub button inside the transmitter.
+...
+
+release 1.34 - 5/18/2020
+-Some people have been struggling to connect to obswebsocket, I made a few changes,
+	first I added longer timeout,(You can open connect.ini and add timeout="5000" under [connection] default is 5000, it was 1000 before)
+	second added a non blocking option, this will make it so when you connect to obswebsocket
+	it wont freeze, but i've had bad luck with this it fails to connect most of the time for me when this is on.
+-Russian and japanese characters weren't being sent to obswebsocket properly, they should now.
+	please note that lioranboard doesnt support typing certain characters, you will have to copy paste those
+-processing speed of json data has been greatly increased,fetching obs will be a lot smoother
+-got rid of the "fetching obs data" screen(replace with a small red square at the bottom right)
+-fixed the issue when a source had a weird symbol like TM in it.
+-can now toggle a source without specifying a scene, the scene will be regarded as current scene if so.
+-The receiver will clearly notify you when a second transmitter is attempting to connect now instead of saying stream deck connected.
+-SetValue for extension no longer needs to specify string or real
+-made a small change to the transmitter, the test button wont work unless you update to the newer version.
+-Can now do quick search in select menus just by typing letters, try it.
+-Modify button has been optimize to no longer send the modification if doing the same exact modification.
+-Fixed a bug if you had a source with # in the name that would break the select menu
+-Special sources such as Desktop audio and microphone/auxiliary now show up as source in lioranboard
+-increased overall stability of the receiver.
+-Stream deck 1.34, optimized the rendering on screen so its wasting less power and is less laggy.(no need to update it if you dont mind previous version)
+-Stream deck can no be reconnected if it is disconnected by pressing anywhere on screen.
+-custom packet, if you make the message-id 666, you will see a small alert about the status code return
+-Fetch obs data is now more precise, allows for more object level and allows for array use.
+-Added more on connect triggers
+	!transmitterconnected 	when the transmitter first connected
+	!obsalways				these are the same as the other one but they happen everytime
+	!twitchalways
+	!transmitteralways
+...
+
+release 1.33 - 5/13/2020
+-Changed the way option settings are saved., you might have to relink your twitch account and set thinks like auto reconnect back on
+-Ability to build JavaScript Extention.
+	MUST REPLACE THE TRANSMITTER FOR THE NEW ONE FOR ANY EXTENSION FEATURE TO WORK
+	You can send a few commands to LioranBoard through the transmitter. New text file include "extension/readme.txt"
+	This can allow you to connect basically Anything through Lioranboard. Youtube, Streamlabs, Streamelements, Philips Hue
+	But you need to program or find Extension other people made.
+	comes with a few built in extension, The extension file are included but already installed in the transmitter.
+	To install a new extension just click Install Extension on the main window and select the LBE file then the transmitter
+-Comes with 3 different Already installed extension
+	Follower alert,Bits top 3 and Stream change title/game
+	Just use Send to Extension to use them.
+-Send to Extension    New Command, allows to send lioranboard data to the extension script inside the transmitter, should be clear when you use the command
+-Twitch Trigger window now has the option for "Extension Trigger", these triggers are user driven, what it does is based on what extensions you have
+	For exemple if you have the Follower Alert on, Set Extension to "Follower Alert" for the trigger to work when you get a new followers.
+	Hopefully the extension you find comes with some documentation
+-Math: Pull Trigger now includes a section about Extension trigger, works the same as chat message trigger, it can have wild cards
+
+-Init button trigger for LioranBoard start up more
+	This allows you to set a init script to a button.
+	How to do this. Add the new "Extension Trigger" to a button and set it to the following.
+	!initlioranboard    for when lioranboard starts up.
+	!obsconnected 		for when lioranboard is connected to obs, please keep in mind that this will wait for all the data to have been fetched before triggering
+	!twitchconnected	for when twitch chat is connected
+	!resetlioranboard	for when you click the reset button
+	
+-Fetch OBS data    New Command, allows to fetch data through obswebsocket. a bit complex, read the commands.html about it
+-Math: Value Transition now sets the value to start value instantly rather than waiting for the next frame
+-Fixed # causing some visual glitch when used in a text box
+-holding left and right now move normally inside a textbox
+-password box now has a button to make it visible
+-password box is now more accurate when selecting
+-Added Russian character support
+-Added Katakana and hiragana support
+-channel_id and oauth_token are now value you can pull from at all time, for security reason they do not show up in the value window.
+-added more rights to the token link so you can use chat command like emotesonly/commercial/ban and more,
+-Added "= String" and "!= String" to compare commands
+...
+	
+release 1.32 - 5/8/2020
+-Math: Pull Source Value    New command, Allows you to get the value from a source such as position/scale/rotation/volume/Muted/Visible
+-Math: Pull Filter Visibility    New command, Allows you to get the visibility of a filter
+-Open URL    New Command,  Allows you to open a url of your choice
+-String: Position    New command, allows you to get the position of a string within a string
+-Set Clipboard     New Command, allows you to set the clipboard to a desired string.
+-Load Clipboard     New Command, allows you to load a string from the clipboard into a value.
+-Point Redeem Message new twitch trigger, same has Point redeem but require a chat message, leave it to * if it can be anything.
+-Fixed Motion: Volume Slide was not sliding the volume properly as a % instead was applying as a db. It should feel smoother now,final and starting volume might not be the same as before.
+-Math: Random now has an extra box, "Float" true=will return a float, false can not return a float.
+-"current_scene" new permanent value added, returns the current scene in obs, the value is visible in value window, return an empty string if never connected to obs
+-File: Save/Load commands now accept both file name with or without extension, "name_list" and "name_list.ini" are basically the same. "name_list.txt" will result in "name_list.txt.ini"
+-Sub trigger for Subgift and anonsubgift were inverted, fixed that.
+...
+
+release 1.31b - 4/30/2020
+-old Motion: Position/Scale Smooth were causing a crash, its fixed now.
+...
+
+release 1.31 - 4/30/2020
+-Motion: Position Smooth and Scale Smooth have been removed (Don't worry if you used them they will still work but you should move to the new way of doing it)
+-Motion: Position/Scale/Rotation now have a new "Smooth" Parametter, Can select 4 option, None / Out(like old smooth option) / In / In&Out
+-Made a change to Modify Button command, instead of using # for new line please use \n from now on. If you want to add # sign to the text, Add \# as usual (This change does not affect the normal button text)
+-Fixed VIP Chat triggers, they weren't working, now they should.
+-There is no typo in chat message trigger. You are boardcasting because you are using lioranboard
+...
+
+Release 1.30 - 4/25/2020
+-Modify Button      New Command, Change the appearance of a button temporarily, Requires update 1.30 of the Stream Deck Client. if you dont care about this, you dont need 1.30
+-Source Change Settings    New command, set the settings of a source, Very useful.
+-Overtime    New command, An official way to Articially increase the duration of a button.
+-Repeat Previous    New Command, instantly repeats the previous commands.
+-Math: Clear Value     New Command, Delete a value from the list of value, in case you don't like your value window being clutered
+-Cooldown timer on buttons should now be more accurate if it has commands that add duration such has all the Motion: stuff, keep in mind you can still artificially modify those on the spot making it unpredictable by the timer
+-Added a button in the Android client that allows you to prevent sleep mode.
+-Added a Help button in the command list at the top, it will open the command help file
+...
+
+Release 1.29c - 4/23/2020
+-Command Line    New command, to go along with Execute Program, 
+...
+Release 1.29b - 4/21/2020
+-Execute Program would not work if the file path had space in it, should work fine now, should work on any file 
+...
+Release 1.29 - 4/21/2020
+-Execute Program    New command added, Allows you to run a program, can also run files(If you use this it might trigger your anti virus so make sure you whitelist the app)
+-Motion: Position Curve     New command added, transition with a circle curve to it
+-Math: Value Transition     New command added, Transition a value from A to B
+-Fixed a visual glitch when selecting some text box that would change the color of the surrounding text.
+-Fixed a bug in the text box that would delete an extra character when deleting a selected text
+-Added some colors to the commands text boxes, Light blue=scene light green=source light orange=filter, gray any other selectable box
+-Can now type in the Scene/Source/Filter box by RIGHT CLICKING it, So you can use the /$valuename$/ wild cards
+...
+
+Release 1.28b - 4/17/2020
+-made the edit window twice the size so you can see more text
+...
+
+Release 1.28 - 4/16/2020
+-Fixed a bug with pulling from the json that caused a screen lock up where you'd see the text "Fetching Scenes, Source, and Filter info. May take a few seconds." forever, sorry to anyone that had this problem and couldn't use the app
+-Made it possible to use tab to now switch to the text or previous text box.
+...
+
+Release 1.27 - 4/13/2020
+-Fixed a bug that crashed the app when a few button were triggered through Twitch Triggers.
+-Fixed a bug that made it so Trigger: Button commands would not queue up properly.
+...
+
+Release 1.26 - 4/6/2020
+-There is now a built in value call elapsed_time, always available to use in Math and Compare commands, return time elapsed since the app has started, can be usefull to have an always ongoing variable. Is visible in the Tab value viewer
+-Math: Value to Value    new command added, The same as Math: Change Value but unlike that one, Takes 2 Values instead of 1 value and a real or string
+-Math: String to Real     new command added, turn a string into a real number, must be only digits related characters
+-Math: Sound Name Pull has been renamed to String: Sound Name Pull, nothing change on how it works
+-Compare Values: Skip/End/Redo if    new commands added, Same as the other Compare: commands but take 2 values rather then 1 value and a real or string
+-Added tons of commands to deal with strings
+-String: Length    New command, return the length of a string
+-String: Digits    New command, remove all unrelated charactes from a string to turn it into a digits strings, should do this before using Math: String to Real
+-String: Replace    New command, Replace a string within the string to a new string.
+-String: Lower Case    New command, return lower case version of the string
+-String: Upper Case    New command, return upper case version of the string
+-String: Clamp    New command, clamp a string
+-String: Real to String    New command, turn a real value to a string version
+-Fixed a bug when mass deleting commands that would crash the app if scrolled down.
+...
+
+
+Release 1.25 - 4/3/2020
+-Math: Chat pull now renamed to Math: Trigger pull, now works on every type of triggers, can pull various values such as names, bits amount, message and many other usefull things see commands.html for the whole list
+-Math: Sound Name Pull   new command, can pull the file name of every sound effect that the particular button trigger.
+-Text Source Change Text   new command , change the text of a Text GDI+ source
+-A new window was added to see all the active and queued buttons. you can cancel them individually from that window.
+-Fixed a few bugs that would crash the receiver such as selecting missing scene list
+-The icon for Commands has now been changed to CM rather than WS, since it is no longer only for websocket commands
+...
+
+
+Release 1.24 - 3/13/2020
+-Borderless button is now an option when a button has an image. updated the Stream deck to be able to display that, you dont need to update it if you dont want this feature.
+-fixed a bug that crashed the receiver when too many buttons were queue'd.
+-Fixed the reset button in the options, it should work properly now , i hadn't updated it to fit the new network protocol and new value system.
+-Crashes that happened randomly when maximizing the receiver should not happen anymore.
+-fixed some other issues.
+...
+
+Release 1.23 - 3/12/2020
+-Value array has been changed(From Math: Change Value) to just be value name. So you can put whatever name you want as a value, this should make it much easier. if you used math stuff you dont need to change your commands they will work as normal
+-you can use variable name direction into value replacement -> /$value_name$/, see Math: Change Value in the commands.html for more info
+-made the user interaction with the command window much better, yuo can now select multiple commands, copy and paste them.
+...
+
+Release 1.22 - 3/11/2020
+-Made modification to the way the packets are sent between the stream deck and the receiver 
+-Stream deck now show the remaining duration of a button with a clock like visual, Note that things like Motion: and Compare: Redo if commands will change the duration of a button and it is impossible to predict how long the button will last, but will still show them as grayed out if not ready
+-OBSwebsocket password can now be set. Go into options to set your password.
+-Now have the option to have a clicking sound when pushing buttons in the Steam Deck
+-New option to increase the button border size, the option is only available/Visible when the button has a picture associated to it.
+-Can now include Wild card in Chat message triggers, the wild card is -> *
+-Message covered by the wild cards can be pulled into value slots through Math: Chat Pull, 0=the whole message 1= wild card number 1 and so on, can also turn the value into a real number
+-Twitch: Chat Message  command as been added, allows you to send chat message (will need to renew your token to get chat edit priviledge)
+-File: Save/Load value/string has been added to the list of commands, you can write and read from an ini file using this feature, very usefull
+-Changed the way the stream deck draws the button on screen, should waste less power and be faster now.
+...
+
+Release 1.21 - 3/4/2020
+-Included a new Commands.html which is a help file for all commands.
+-Fixed a bug when OBSwebsocket is connected and you delete a source that caused the receiver to crash.
+-added Cos/Sin/Tan math to Math: change value
+...
+
+Release 1.20 - 2/28/2020
+-Added Twitch chat connectivity for the new triggers, You will need to renew your token to give chat access to the app.
+-OBS commands have been renamed to just Commands, it felt more appropriate considering its not all related to OBS.
+-Trigger: Button command has been added, allowing you to trigger any other button, you can get the id of a button by right clicking it
+-buttons now have a number ID, which is unique to each button. copy pasting a button will give it a new id unless you deleted the original one before pasting it.
+-You can now add a Chat message trigger
+-You can now add Host trigger
+-You can now add Raid trigger
+-Fixed a bug on the Stream deck regarding drag press and switching to a new board.(if your stream deck is crashing right after pressing a button that switch scene, consider installing this version.)
+-added version number in the stream deck
+...
+
+Release 1.19 - 2/20/2020
+-New Version for the Stream deck apk RE-INSTALL IS REQUIRED, some new packets are being sent, stream deck 1.10 will most likely crash if ran with 1.19.
+-The Stream deck will now show a maroon color on buttons that are currently ongoing(When buttons are in this state, they can not be pressed, that was this way before just no visual for it)
+-The Stream deck now doesn't just do a green screen if it fails to connect, it will show a message and stay on the main screen.
+-The Stream deck now tries to connect every 15 seconds once its disconnected.
+-Twitch sub triggered weren't working, they should work now.
+-Motion: positon/scale Smooth, were added. This perform the same thing as their counter part but instead of directly going to their final state they start out normal speed and slow down as they reach their final state for a smooth looking transition.
+-Change the name of a lot of things in the receiver, The word pubsub has been removed and replace for Twitch, OBSwebsocket as been replaced for OBS. Fixed a few typos here and there.
+-The number of a deck now shows next to the Deck name on the receiver. That number is the number you need to enter in the deck to view that one(0 is no longer valid).
+-Fixed some other bugs
+...
+
+Release 1.18 - 2/16/2020
+-ATTENTION. "Source Volume" has been slightly changed, it is now percentage based. so if you used Source Volume you will have to go change all of them.
+	The normal 0-1 is a percentage of DB, which is a bad way to gauge sound volume, so a curve bell was added to the percentage which will make it feel more percent like in therm of what volume you get.
+	Here what to expect Ex:(New=Old / 10=0.02 / 20=0.06 / 30=0.14 / 40=0.24 / 50=0.35 / 60=0.49 / 70=0.62 / 80=0.76 / 90=0.89 / 100=1.00) this gives more precision in the lower range and less in the higher range
+-added an option windows, so can set everything through the program now instead of editing ini files
+-Increased the size of the WebSocket edit window.
+-Made it so you can use the mouse wheel button to scroll in the WebSocket edit window along with region selector visual.
+-Websocket Source Change position,scale,rotation were added.
+-Websocket Filter change Settings was added
+-Websocket Motion: Scale decimal should be more accurate now.
+-Websocket Motion: Rotation was added
+-Websocket Math: Random was added
+...
+
+Release 1.17 - 2/14/2020
+-Fixed a bug with OBSwebsocket when sending packets that were exactly 126 in size breaking the websocket protocol
+-Fixed a bug that forced the TLS to disconnect when connecting to obswocket and other things
+-Added a few new options you can add to a button for OBSWebsocket options.
+-Motion: Position, make a source move from point A to B over a duration
+-Motion: Scale, make a source change size from A to B over a duration
+-Motion: Alpha, change the transparency of a Source from A to B over a duration, Must be applied to a Color Correction Filter
+-Motion: Volume, Change the volume of a source from A to B over a duration
+-Math: Set value, can set and do math to a global array 0-100 to be used later hold tab in the main screen to view all the variables
+-Compare: Skip if, If the value returns true it will cancel a number of action following it, it will cancel them regardless if they happened or not, The delay is irrelevant in choosing what gets cancel but the compare action can be delayed.
+-Can now set the FPS to match that of your stream so the motion action look propers, No way to currently set it inside the program. Open options.ini or connect.ini and on the [windows] bracket put framepersecond="60", default is 30
+...
+
+Release 1.16 - 2/11/2020
+-Can now link your twitch account to the stream deck.
+-Can now have button trigger on Subscription,Bits donation and Channel points redeem.
+-The download package now comes with a file named tls_transmitter.html, this is necessry for the feature mentionned above to work.
+	It contains Javascript code allowing the stream deck to establish HTTPS connection to twitch.
+	I suggest adding it to OBS as a browser source, making it invisible and just forget about it if you wish to use these features.
+-I greatly appreciate any bug report for this update since i do not have the following to be able to fully test subscription and bits triggers.
+...
+
+Release 1.15 - 12/2/2019
+-Tried to fix the file saving system for the receiver which isn't working for some people, the program will now try to write a file and if it fails it will default to the windows file writing system
+	so instead of writing files in the directory directly it will be in your appdata folder under "LioranBoard" folder
+	Let me know if that fixes it if it wasn't working for you before.
+...
+
+Release 1.14 - 11/27/2019
+-Made the graphic for the Receiver more modern looking, should look much more appealing now.
+-Can now delete, add and move decks in the receiver
+-can now change the port withing the receiver
+-The switch to next deck number option has been entirely removed(the not looping one) so if you were using that you might wanna update it.
+-When setting a deck number to switch to, it will give you a list of all decks rather than asking for a number
+-removed the annoying pop up when you tried to expand a button in ways you couldn't
+-Websocket packet no longer shows up as an alert message
+...
+
+Release 1.13 - 11/25/2019
+-Made the Editor visual of the button more accurate to what you see on the tablet
+-added icons for what action are attributed to a button (sound, websocket, drag button and such so you can more easily see which button performs actions)
+-added a small visual on when you can resize buttons, you should see a small white arrow when you can expand a button in which direction
+...
+
+Release 1.12 - 11/24/2019
+-The receiver will now detect when a source/scene/filter was added or removed, also name changed and go through all your deck and swap the new name if you were using it.
+	this feature will work as long as the receiver is connected to obs while those changes are being made, else there is not way to detect them.
+	Also there is no OBSwebsocket notice for filter name change so that's unsupported, So make sure you don't change filter name if you know you're using them.
+	added and remove filter is supported fine.
+...
+
+Release 1.11 - 11/22/2019
+-OBSwebsocket had a packet size bug, so if some of your websocket commands didn't work, they should work now.
+-There was a bug that prevent to receive 2 packet back to back
+-Made it a lot faster to transfer OBS data to the receiver
+...
+
+Release 1.10 - 11/20/2019
+-OBSwebsocket support is now in,password not supported yet, (Studio mode change seems to be crashing obs not sure if that's just my obs or what.)
+-You can now shrink and expand a button with the mouse by draging the edge of a button (all previous way to do that have been removed)
+-All left click options have been moved to the right click.
+-Right click option should be more understandable now and more compact
+-Popup notice have been removed and will be shown as a yellow message in the bottom left corner of the screen
+-Receiver should be more stable in general. let me know if you get any crashes.
+...
+
+Release 1.09 - 11/14/2019
+-you can now set an option on a button called Drag press where you can activate it by draging your finger on it rather than having to press on it directly, drag multi can also be set to make it happen again if you want to press it multiple times without lifting your finger(if you move your finger arround)
+-can now make an option that allow you to change the speed and sound of every sound that is currently playing(comes with a testing scene deck file "config2.ini")
+-can now set a fade effect to stop all sounds, 0ms is like it was before
+-can now use multiple touch at once
+-fixed a crash that happen when switching scene while pictures were loading
+-pictures should load faster now.
+-small circle visual as been added to see where presses are happening
+-overall stability should be a lot better now
+...
+
+Release 1.08 - 11/6/2019
+-Lower the size of data that's being transfered when loading a deck to the deck app
+-Fixed a bug that made it so something deck wouldn't switch, now if they dont switch it will try again withing 0.5 second.
+-Fixed a bug that caused a crash when you set a switch deck direct number
+...
+
+Release 1.07 - 11/4/2019
+-Fixed a bug when editing Text where the # sign wouldn't show properly in the text box, also updated the help message to be accurate.
+-Fixed a bug when using the change image button causing the receiver to crash
+-Fixed a bug when deleting a button that was causing the receiver to crash
+-Added a copy and paste button feature
+-Added a speed change option for sounds
+-Changed the position of the volume numeric value, forgot to change it before.
+...
+
+Release 1.06 - 11/3/2019
+-Changed the switch deck option to include more options
+-Can now create up to 1024 different decks all stored in their own seperate files "configs#.ini"
+...
+
+Release 1.05 - 11/2/2019
+-changed the way the deck are transfered to the tablet, that way you can use the whole scope of the grid size without having it crash
+...
+
+Release 1.04 - 11/1/2019
+-Changed the way to edit keypress and sound, more user friendly also can have a lot more keys and sound effect.
+Should be much better now, also allows for way more keypress for 1 button and sounds aswell
+...
+
+Release 1.03 - 10/30/2019
+-Fixed the lag bug that was happening when connected to the receiver and editing a deck.
+-Made the pinging system better.
+...
+
+Release 1.02 - 10/27/2019
+-Changed the button's graphic to be more compactable.
+-Added a copy paste button in the color selection window
+-Added click shortcuts for srinking and expanding a button (see above)
+...
+
+Release 1.01 - 10/24/2019
+-Added support for multiple device
+-Added support for multiple boards
+-Added option to switch between board with a button you create (option "switch deck")
+-Improved the interface a bit
+-Fixed various bugs
+-Included a pc version of the Stream Deck aswell if people can find use for that
+...
+
+Release 1.00 - 10/22/2019
+-It exists.
+...

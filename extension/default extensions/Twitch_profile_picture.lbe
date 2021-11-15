@@ -1,0 +1,25 @@
+[extension_name]
+Get profile picture url from user
+[insert_external]
+<div><p>Get user profile picture is installed.</p></div>
+[insert_command]
+LBSendExtCommand('Get Profile Picture', { oauth_token: 'string', user_name: 'string', value_name: 'string' });
+[insert_hook]
+case "GetProfilePicture":{
+	GetProfilePicture(LioranBoardJSON.oauth_token,LioranBoardJSON.user_name,LioranBoardJSON.value_name)
+}break
+
+[insert_script]
+function GetProfilePicture(oauthtoken, user_name, value_name) {
+  const url = `https://api.twitch.tv/kraken/users?login=${user_name}`;
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+    Accept: 'application/vnd.twitchtv.v5+json',
+  };
+  fetchRequest(url, headers)
+    .then((res) => LBSetValue(value_name, res.users[0].logo))
+    .catch((e) => LBAlert(`Get Profile Picture Error: ${e}`));
+}
+[insert_over]

@@ -1,0 +1,387 @@
+This read me is for people that wish to build extension
+==========================
+Proper way to build an extension for lioranboard. 
+==========================
+FIRST
+	you will need to know a little bit of JavaScript.
+Javascript is a very powerfull programming language that can connect any other language to each other easily.
+
+SECOND
+	you need to understand how Lioranboard is setup to work with this.
+LioranBoard has an In and Out way inside tsl_transmitter.html
+If you search for INSERT PART inside the transmitter you will find 4 returns.
+
+	INSERT PART 1
+	this is refered to as External
+	This is where you include any external script you made if you so choose to do it that way.
+
+	INSERT PART 2
+	this is refered to as Commands
+	This is where you include the extension you wish to show to people inside lioranboard
+	You can see a few exemple right there for Follower Alert and such, this is what tells Lioranboard what to show in the "Send to Extension" commands
+	if you want your extension to show in LioranBoard and not have to use Manual "Sent to Extension" , this part is required
+
+	INSERT PART 3
+	this is refered to as hook
+	This is where the hook for your script happens, when the command "Send to Extension" is sent, it will go here and execute based on the datatype
+	datatype should be a string of your choice.
+
+	INSERT PART 4
+	this is refered to as script
+	Technically this can be anywhere but for sake of readability, You should insert your own javascript here
+	You can make your whole script here or use INSERT PART 1 along with it instead.
+	If you want to do twitch poll and such you can use client id that's present in the transmitter as TWITCH_CLIENT_ID
+
+
+	
+THIRD
+	once your extension is completed,tested and working
+If you want to share your extension with others you can easily change your script into an extension file
+
+To do so all you have to do is take the 4 insert part and insert them into   template.lbe
+lbe files are just simple txt files formated in a way that lioranboard can insert them into the transmitter with a few simple clicks
+the template consist of 4 section
+
+[extension_name]
+The name of your extension, this is important to be able to update your extension in the future and not have duplicate inserts
+Name your extension something unique incase someone makes an extension with the same name. Hey, put your name in it if you have to.
+do not change this in futur update of your extension
+	
+[insert_external]
+What will be put under INSERT PART 1
+just your common external script 
+such as <script src="example.js"></script>
+You can insert <div> and <p> here if you choose
+maybe include a small message of the name of the extension with version number
+but keep in mind most people won't see these
+
+[insert_command]
+What will be put under INSERT PART 2
+lioranboard command script
+
+[insert_hook]
+What will be put under INSERT PART 3
+The hooks you wish to insert into lioranboard
+the hook and "Extension Command" name are tied together.(extension name spaces are ommited)
+
+[insert_script]
+What will be put under INSERT PART 4
+your transmitter natively run script
+
+[insert_over]
+just a file ender
+Below This you can include a configs.ini file text
+that contains exemple of how to setup the buttons to use with your extension
+
+ALSO if that exemple make use of button ids. It is HIGHLY suggested that
+you manually edit that file to change the ID of every button to be a random
+high number to make sure there is no duplicate button id interfering with other's deck
+Keep in mind if lioranboard detect duplicated button id, it will change them,
+but it won't change the "Button ID" boxes
+
+You can also include some extra install forced check in this section(see below)
+
+When installing an extension, the receiver will ask the transmitter to reload.
+This will happen at the same time as the install forced check triggers(see below).
+So if your deck requires some "Send to Extension" commands, give them some delay so LioranBoard has the time to get all of them properly.
+
+If Your extension is only a deck with no script. Then no script will be installed and the deck will be generated.(must have a name as well)
+
+You can use the normal command system to make sure lioranboard is connected to OBS and check versions
+Check in the LioranBoard Notification system deck to figure out how i force people to have OBSwebsocket 4.9.0 or higher.
+
+
+Make sure you follow these steps properly, you can look at the included LBE files to see exemples.
+
+That's it for the directions of how to make an extension.
+
+==========================
+Extension install forced check
+==========================
+When installing an extension you might want to insure a few things.
+Things like Is Lioranboard the right version, is it connected to OBS, Which OBSwebsocket version is it using.
+Things of the sort can be checked a lot with other
+
+Below the [insert_over] section you can include a few things.(yes you want to include this with your deck if you have one)
+
+First include this, without this none of the forced checks will work.
+
+[force]
+force_check_name=""
+
+Here are the force check you can use
+
+version="1.42"
+	-will require lioranboard version 1.42 or higher.
+obswebsocket="4.9.0"
+	-Requires to be connected to OBS and that OBSwebsocket version is 4.9.0 or higher.
+transmitter="1"
+	-requires the transmitter to be connected.
+location_check="1"
+	-require the extension to be inside the receiver folder in game you want to make sure it is installed properly with other files.
+donot_include_deck="1"
+	-Include this in your [force] section if there is no deck and only a somes force or if you simply do not wish for the deck to be automatically installed.
+extension0="Name of an extension"
+extension1="name of another extension"
++ so on, as many extension as you need
+	-This is to make sure another extension is installed such as maybe "Follower Alert" extension.
+	You must put the original name of the extension, the one you find inside its LBE file, case sensitive.
+trigger0="extension trigger"
+trigger1="another extension trigger"
++ so on as many trigger as you need.
+	-will execute these triggers upon successful install.
+	math trigger pull will be 1 the full path of where the extension is
+	if the extension is c:/extension/file.lbe
+	then math trigger pull will return "c:/extension/"
+	for all triggers.
+	
+	
+
+
+
+==========================
+What you can send to Lioranboard
+==========================
+Everything you send to lioranboard has to be a stringified JSON
+use the function lioranboardclient.send(JSON.stringify(object))  inside the transmitter to send message to lioranboard
+
+Set a Variable, set a Variable in lioranboard
+	type="MESSAGE" 
+	topic="SetVariable"
+	variable="Name of the Variable to set"
+	value=value to set the variable to, real or string
+
+Get a Variable, get a Variable from Lioranboard
+	type="MESSAGE" 
+	topic="GetVariable"
+	variable="Name of the Variable to get"
+	datatype="datatype part of INSERT PART 3"
+	
+	Replyfrom lioranboard will include
+	datatype="previously mention datatype for the hook"
+	variable="name of the Variable"
+	value=real or string
+
+
+Trigger, Send a trigger to lioranboard that will check all the "Extension Trigger"
+	type="MESSAGE" 
+	topic="ExtensionTrigger"
+	trigger="string name of the triggers for Extension Trigger"
+	value1="math trigger pull 1"
+	value2="math pull 2"
+	+as many as you need.
+
+
+Trigger a button ID  , works the same as trigger button
+	type="MESSAGE" 
+	topic="ButtonTrigger"
+	buttonid="name ID of the button"
+	queuable=true/false
+
+Modify Button ID  , works the same as Modify Button command
+	type="MESSAGE" 
+	topic="ModifyButton"
+	buttonid="name ID of the button"
+	red=real, red value
+	green=real, green value
+	blue=real, blue value
+	text="new text name"
+	picture="picture.png of choice"
+	border=real, size of the border
+
+Alert Message, Those are the little yellow message that show up at the bottom of the screen in lioranboard
+	type="MESSAGE" 
+	topic="AlertMessage"
+	message="whatever text you want to show"
+	
+Popup Message, show a popup message in the receiver.
+	type="MESSAGE" 
+	topic="PopupMessage"
+	message="whatever text you want to show"
+
+Extension Command, This is basically the script you put in INSERT PART 2 .Send to lioranboard what you want to see in Send to Extension (keep in mind, any space included in the names, will be ommited from the final json string)
+	type="MESSAGE" 
+	topic="ExtensionCommand"
+	name="name of the extension"  the name and the Hook are tied together(without space)
+	boxcount= real, amount of extra boxes
+	boxname1="name of the box"
+	boxtype1="real/string/boolean"
+	boxname2="name of the box"
+	boxtype2="real/string/boolean"
+	+and continue for the amount of boxcount, max of 7 boxes
+	NOTE:You can make a box a drop down menu between preselected options by setting the boxname to
+		name|option1|option2|option3|
+		First part will be the normal name that shows up, everything after that will be in the drop down menu
+		Can put as many option as you want,must end with a |
+		Be aware that you won't be able to type in the box if you use this feature, only be able select stuff from the drop down
+
+Stack Get, request an entire stack from lioranboard
+	type="MESSAGE" 
+	topic="GetStack"
+	name="Name of the stack"
+	datatype="datatype part of INSERT PART 3"
+
+
+	Lioranboard will reply with
+	datatype="previously mention datatype for the hook"
+	stackname="name of the stack"
+	size=size of the stack
+	value=array[value0,value1,...]
+	
+
+Stack Add, insert a value inside a stack
+	type="MESSAGE" 
+	topic="AddStack"
+	name="Name of the stack"
+	position="string even if a number, put top for the top of the stack"
+	value=real or string
+	
+Stack Remove, remove a value from a stack
+	type="MESSAGE" 
+	topic="RemoveStack"
+	name="Name of the stack"
+	position="string even if a number, put top for the top of the stack"
+	
+Stack Delete, Delete an entire stack
+	type="MESSAGE" 
+	topic="DeleteStack"
+	name="Name of the stack"
+
+Stack Append, append a whole array of data to a stack. if the stack does not exist, it will create it.
+	type="MESSAGE"
+	topic="AppendStack"
+	name="name of the stack"
+	values=array[value0,value1,...]
+
+==========================
+Default Helper functions
+==========================
+In order to avoid having to retype the JSON strings, Transmitter contains the following global helper functions: 
+
+LBSendExtCommand(name, boxes) 
+* send extension command to LB
+* @param {string} name - Name of the extension command
+* @param {Object.<string, ('string'|'real'|'boolean')>} boxes
+*   Key = box name, value = box type (string, real, boolean)
+
+Example: LBSendExtCommand('Change Stream', { oauth_token: 'string', channel_id: 'real', title: 'string', game: 'string' });
+
+LBAlert(msg)
+* Send a yellow notification message to LB
+* @param {string} msg - Message to send
+
+Example: LBAlert('Hello World!')
+
+LBPopUp(msg)
+* Send a popup message to LB
+* @param {string} msg - Message to send
+
+Example: LBPopUp('Hello World!')
+
+LBSetValue(name, value, real)
+* Set a value in LB
+* @param {string} name - Name of the variable
+* @param {(string|number)} value - New value of the variable
+* @param {boolean} real - Whether the value is real (default = not real)
+
+Example: LBSetValue('username', 'Melonax', false)
+
+LBGetValue(name, hook)
+* Get a variable from LB (you can retrieve it via its hook)
+* @param {string} name - Name of the variable
+* @param {string} hook - Name of the hook to receive the data
+
+Example: LBGetValue('username', 'usernameHook')
+
+LBTriggerExt(trigger, ...values)
+* Send an extension trigger to LB (max 20 values)
+* @param {string} trigger - Name of the extension trigger
+* @param {(string|real)} values - values for math trigger pull command
+
+Example: LBTriggerExt('Leaderboard', 'Lioran', 'Melonax', 100, 500 )
+
+LBTriggerBtn(id, queuable)
+* Trigger a button in LB  
+* @param {string} id - button ID
+* @param {boolean} queuable - whether the button should be queuable (default=false)
+
+Example: LBTriggerBtn('ID123', false)
+
+LBModifyBtn(id, text, red, green, blue, picture, border)
+* Modify a button in LB (leave empty for default values)
+* @param {string} id - button ID 
+* @param {string} text - button text 
+* @param {number} red - red RGB value 
+* @param {number} green - green RGB value 
+* @param {number} blue - blue RGB value 
+* @param {string} picture - picture url 
+* @param {number} border - border size
+
+Example: LBModifyBtn('ID123', 'My button', 255, 0, 0, 'mybutton.png', -1)
+ 
+LBStackGet(name, hook)
+* Get a whole stack from LB (you can retrieve it via its hook)
+* @param {string} name - Name of the stack
+* @param {string} hook - Name of the hook
+
+Example: LBStackGet('My Stack', 'MyStackHook')
+
+LBStackAdd(name, position, value)
+* Add a value to stack in LB
+* @param {string} name - Name of the stack
+* @param {(string|number)} position - Position to add the value to
+* @param {(string|number)} value - Value to add
+
+
+Example: LBStackAdd('My Stack', 'top', 'some value')
+
+LBStackReplace(name, position, value)
+* Replace a value in stack in LB
+* @param {string} name - Name of the stack
+* @param {(string|number)} position - Position to replace the value
+* @param {(string|number)} value - Value to replace
+
+
+Example: LBStackReplace('My Stack', 5, 'Melonax')
+
+LBStackAppend(name, array)
+* Append a whole array to stack in LB
+* @param {string} name - Name of the stack
+* @param {array} array - array to append
+
+Example: LBStackAppend('My Stack', ['Lioran', 'Melonax', 123])
+
+LBStackRemove(name, position) 
+* Remove a value from stack in LB
+* @param {string} name - Name of the stack
+* @param {(string|number)} - position Position to remove the value from
+
+Example: LBStackRemove('My Stack', 'bottom') 
+
+LBStackDelete(name)
+* Delete a whole stack in LB
+* @param {string} name - Name of the stack to delete
+
+Example: LBStackDelete('My Stack')
+
+fetchRequest(url, headers, body, method = 'GET')
+* Basic function for fetch requests
+* @param {string} url - url for the fetch request.
+* @param {Object} headers - headers object.
+* @param {Object} body - body object.
+* @param {string} method - method (default=GET)
+
+Example: 
+  const url = `https://api.twitch.tv/kraken/streams/${channelid}`;
+  const method = 'GET';
+  const headers = {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers, null, method)
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((e) => LBAlert(`Error: ${e}`));
+}
+	

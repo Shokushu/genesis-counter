@@ -1,0 +1,37 @@
+[extension_name]
+Change Stream
+[insert_external]
+<div><p>Change Stream extension is installed</p></div>
+[insert_command]
+//change title or game command for lioranboard
+LBSendExtCommand('Change Stream', { oauth_token: 'string', channel_id: 'real', title: 'string', game: 'string' });
+[insert_hook]
+//Change Title or game hook
+case "ChangeStream":{
+	LBChangeStream(LioranBoardJSON.oauth_token,LioranBoardJSON.channel_id,LioranBoardJSON.title,LioranBoardJSON.game)
+}break
+[insert_script]
+function LBChangeStream(oauthtoken, channel_id, title, game) {
+  const change_stream = {};
+  change_stream.channel = {};
+  // add title change if not empty string
+  if (title !== '') {
+    change_stream.channel.status = title;
+  }
+  // add game change if not empty string
+  if (game !== '') {
+    change_stream.channel.game = game;
+  }
+  // send request to twitch
+  const url = `https://api.twitch.tv/kraken/channels/${channel_id}`;
+  const headers = {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    'Content-Type': 'application/json',
+    Authorization: `OAuth ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers, change_stream, 'PUT')
+    .then(() => LBAlert('Stream Status successfully changed'))
+    .catch((e) => LBAlert(`Stream Status Error: ${e}`));
+}
+[insert_over]

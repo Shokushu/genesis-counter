@@ -1,0 +1,23 @@
+[extension_name]
+Subscriber Count
+[insert_external]
+<div><p>Get Subscriber Count extension is installed</p></div>
+[insert_command]
+LBSendExtCommand('Get Subscriber Count', { oauth_token: 'string', channel_id: 'real', value_name: 'string' });
+[insert_hook]
+case "GetSubscriberCount":{
+	LBGetSubCount(LioranBoardJSON.oauth_token,LioranBoardJSON.channel_id,LioranBoardJSON.value_name)
+}break
+[insert_script]
+function LBGetSubCount(oauthtoken, channelid, valuename) {
+  const url = `https://api.twitch.tv/kraken/channels/${channelid}/subscriptions?limit=5`;
+  const headers = {
+    Accept: 'application/vnd.twitchtv.v5+json',
+    Authorization: `OAuth ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers)
+    .then((res) => LBSetValue(valuename, res._total - 1, true))
+    .catch((e) => LBAlert(`Get Sub Count Error: ${e}`));
+}
+[insert_over]

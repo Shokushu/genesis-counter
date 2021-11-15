@@ -1,0 +1,30 @@
+How to install the notification system properly
+Step 1. Put this folder inside the Receiver folder, the system will no longer work if you move this folder later.
+Step 2. Make sure LioranBoard is connected to OBS and that you'Re using OBSWebsocket 4.9.0 or higher
+Step 3. Install the "LioranBoard Notification System.lbe" extension found in this directoy to your main transmitter.
+done
+	Restart Lioranboard
+	The notification system is now ready to be used.
+	There will be a new Scene in your OBS called -LioranBoard Notification-
+	Use it as a nested scene, try with the test notification.
+	The system will resize itself to your resolution so you dont need to worry about that
+	The system is optimized for 60 fps but works fine in 30fps as well
+	
+	
+Extra
+Enabled TTS by pressing the red button.
+The default TTS will only work if the transmitter is running in Chrome.
+
+Switching to Polly TTS** (this is not a tutorial on how to install Polly TTS extension)
+If you use the Polly TTS made by Christinna you can use the TTS in normal Dock instead of Chrome.
+the notification system comes with 2 alternate buttons that you can swap.
+Go in the command list for "Master Animator" and "TTS voices" and delete every commands in there.
+Now go in the "Alternate Master Animator", Click the check box at the top left to select every command and click "Copy selected commands"
+and paste them in the normal Master Animator button. Do the same thing for Alternate TTS voices.
+The TTS should now work in dock mode.
+
+If you have the stream labs alert** installed. The notification system will pick up the donations by default.
+
+
+**Check the LioranBoard discord for those extension
+https://discord.gg/dXez8Zh

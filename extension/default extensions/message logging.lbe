@@ -1,0 +1,144 @@
+[extension_name]
+Message Logging
+[insert_external]
+<!--
+ * @name: Message Logging, @version: 1.0, @author: Christina K
+ * -->
+  <div class='row pt-3 d-block'>
+     <h5>Message Logging</h5>
+     <div class='pl-5 ml-5'>
+        <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="dbgReceiver" onclick="LBDebugLog(this)" >
+           <label class="form-check-label"for="flexSwitchCheckDefault">Receiver</label>
+        </div>
+        <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="dbgPubsub" onclick="LBDebugLog(this)">
+           <label class="form-check-label" for="flexSwitchCheckDefault">PubSub</label>
+        </div>
+        <div class="form-check form-switch">
+           <input class="form-check-input" type="checkbox" id="dbgChat" onclick="LBDebugLog(this)">
+           <label class="form-check-label" for="flexSwitchCheckDefault">Twitch Chat</label>
+        </div>
+        <ul class="nav nav-tabs mt-3" id="debugLog" role="tablist">
+           <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="LBreceiver-tab" data-bs-toggle="tab" data-bs-target="#LBreceiver" type="button" role="tab" aria-controls="LBreceiver" aria-selected="true">Receiver</button>
+           </li>
+           <li class="nav-item" role="presentation">
+              <button class="nav-link" id="LBPubSub-tab" data-bs-toggle="tab" data-bs-target="#LBPubSub" type="button" role="tab" aria-controls="LBPubSub" aria-selected="false">PubSub</button>
+           </li>
+           <li class="nav-item" role="presentation">
+              <button class="nav-link" id="LBChat-tab" data-bs-toggle="tab" data-bs-target="#LBChat" type="button" role="tab" aria-controls="LBChat" aria-selected="false">Chat</button>
+           </li>
+        </ul>
+        <div class="tab-content p-0 " id="debugLogContent">
+           <!--LB Receiver Log-->
+           <div class="tab-pane fade show active" id="LBreceiver" role="tabpanel" aria-labelledby="LBreceiver-tab" >
+              <div id="LBreceiverlog" class="col col-10 text-wrap">Logging is disabled.</div>
+           </div>
+           <!--LB Pubsub Log-->
+           <div class="tab-pane fade" id="LBPubSub" role="tabpanel" aria-labelledby="LBPubSub-tab">
+              <div id="LBpubsublog" class="col col-10 text-wrap">Logging is disabled.</div>
+           </div>
+           <!--LB Chat Log-->
+           <div class="tab-pane fade" id="LBChat" role="tabpanel" aria-labelledby="LBChat-tab">
+              <div id="LBchatlog" class="col col-10 text-wrap">Logging is disabled.</div>
+           </div>
+        </div>
+     </div>
+  </div>
+[insert_command]
+[insert_hook]
+[insert_script]
+LBdebug = JSON.parse(localStorage.getItem('LBdebug')) || {};
+dbgReceiver.checked = LBdebug.receiver;
+dbgPubsub.checked = LBdebug.pubsub;
+dbgChat.checked = LBdebug.chat;
+LBDebugLog(dbgReceiver); LBDebugLog(dbgChat); LBDebugLog(dbgPubsub);
+
+function LBDebugLog(e) {
+  const receiver = document.getElementById('LBreceiverlog');
+  const chat = document.getElementById('LBchatlog');
+  const pubsub = document.getElementById('LBpubsublog');
+  const listening = '<samp>Listening for traffic.</samp>';
+  const disabled = '<samp>Logging is disabled.</samp>';
+  // disable or enable debug logging and display it
+  switch (e.id) {
+    default:
+      break;
+    case 'dbgReceiver':
+      receiver.innerHTML = (e.checked) ? '<samp>Listening for traffic in 3s.</samp>' : disabled;
+      if (e.checked) setTimeout(DebugSentPacketsLB, 3000);
+      LBdebug.receiver = !!(e.checked);
+      break;
+    case 'dbgChat':
+      chat.innerHTML = (e.checked) ? listening : disabled;
+      LBdebug.chat = !!(e.checked);
+      break;
+    case 'dbgPubsub':
+      pubsub.innerHTML = (e.checked) ? listening : disabled;
+      LBdebug.pubsub = !!(e.checked);
+      break;
+  }
+  localStorage.setItem('LBdebug', JSON.stringify(LBdebug));
+}
+
+function DebugSentPacketsLB() {
+  if (typeof lioranboardclient === 'undefined') return;
+  lioranboardclient.__proto__._send = lioranboardclient.__proto__.send;
+  lioranboardclient.__proto__.send = function (data) {
+    this._send(data);
+    this.send = function (data) {
+      this._send(data);
+      LBDebugPost('receiverSent', data);
+      console.log(`<< ${data}`);
+    };
+  };
+}
+
+function LBDebugPost(type, msg) {
+  const receiverlog = document.getElementById('LBreceiverlog');
+  const pubsublog = document.getElementById('LBpubsublog');
+  const chatlog = document.getElementById('LBchatlog');
+  const arrowDown = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-arrow-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/> </svg>';
+  const arrowUp = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-arrow-up" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/> </svg>';
+
+  // post a message into the debug log if enabled
+  switch (type) {
+    default:
+      break;
+    case 'receiver':
+      if (LBdebug && LBdebug.receiver) {
+        receiverlog.innerHTML = `${receiverlog.innerHTML} <br> ${arrowDown} <samp>${StringifyandReplace(msg)}</samp>`;
+      }
+      break;
+    case 'receiverSent':
+      if (LBdebug && LBdebug.receiver && !((msg).includes('PONG') || (msg).includes('PING'))) {
+        receiverlog.innerHTML = `${receiverlog.innerHTML} <br> ${arrowUp} <samp>${StringifyandReplace(msg)}</samp>`;
+      }
+      break;
+    case 'pubsub':
+      if (LBdebug && LBdebug.pubsub && !(msg).includes('PONG')) {
+        pubsublog.innerHTML = `${pubsublog.innerHTML} <br> ${arrowDown} <samp>${StringifyandReplace(msg)} </samp>`;
+      }
+      break;
+    case 'chatReceive':
+      if (LBdebug && LBdebug.chat && !JSON.stringify(msg).includes('PING')) {
+        chatlog.innerHTML = `${chatlog.innerHTML} <br> ${arrowDown} <samp>${StringifyandReplace(msg)} </samp>`;
+      }
+      break;
+    case 'chatSent':
+      if (LBdebug && LBdebug.chat && !msg.includes('PONG')) {
+        chatlog.innerHTML = `${chatlog.innerHTML} <br> ${arrowUp} <samp>${StringifyandReplace(msg)}</samp>`;
+      }
+      break;
+  }
+
+  // stringify if message is an object and replace some symbols
+  // for better readability
+  function StringifyandReplace(obj) {
+    if (typeof obj === 'object') obj = JSON.stringify(obj);
+    const strRpl = obj.replace(/\r\n/g, '').replace(/\\/g, '').replace(/\\/g, '');
+    return strRpl;
+  }
+}
+[insert_over]

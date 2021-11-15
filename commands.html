@@ -1,0 +1,2250 @@
+<html lang="end">
+<body>
+<div>
+<h1><a id="user-content-typedefs" class="anchor" aria-hidden="true" href="#content"></a>Content</h1>
+<h1><a id="user-content-typedefs" class="anchor" aria-hidden="true" href="#content"></a>LioranBoard Command list, last updated 1.43</h1>
+<ul>
+<li><a href="#commands">Commands</a>
+<ul>
+<li><a href="#statements">Statements</a>
+<ul>
+<li><a href="#ifstatement">If statement</a>
+<li><a href="#orstatement">Or statement</a>
+<li><a href="#andstatement">And statement</a>
+<li><a href="#repeatstatement">Repeat</a>
+<li><a href="#reenablestatement">Re-enable</a>
+<li><a href="#exitstatement">Exit if</a>
+<li><a href="#breakstatement">Break if</a>
+</ul>
+<li><a href="#obssourcecommands">OBS Source Commands</a>
+<ul>
+<li><a href="#sceneswitch">Scene Switch</a></li>
+<li><a href="#changescenetransition">Change Scene Transition</a></li>
+<li><a href="#removescenetransition">Remove Scene Transition</a></li>
+<li><a href="#settransitionsettings">Set Transition Settings</a></li>
+<li><a href="#releasetbar">Release Transition Bar</a></li>
+<li><a href="#settbarposition">Set Transition Bar Position</a></li>
+<li><a href="#sourcemute">Source Mute</a></li>
+<li><a href="#sourcetogglemute">Source Toggle Mute</a></li>
+<li><a href="#changeaudiomonitortype">Change Audio Monitor Type</a></li>
+<li><a href="#sourcechangevisibility">Source Change Visibility</a></li>
+<li><a href="#sourcechangeposition">Source Change Position</a></li>
+<li><a href="#sourcechangevolume">Source Change Volume</a></li>
+<li><a href="#sourcechangescale">Source Change Scale</a></li>
+<li><a href="#sourcechangerotation">Source Change Rotation</a></li>
+<li><a href="#sourcechangesettings">Source Change Settings</a></li>
+<li><a href="#textgdichangetext">Text GDI+ Change Text</a></li>
+<li><a href="#freetype2changetext">Freetype 2 Change Text</a></li>
+<li><a href="#filterchangevisibility">Filter Change Visibility</a></li>
+<li><a href="#filterchangesettings">Filter Change Settings</a></li>
+<li><a href="#sourcemotionposition">Source Motion: Position</a></li>
+<li><a href="#sourcemotionpositioncurve">Source Motion: Position Curve</a></li>
+<li><a href="#sourcemotionscale">Source Motion: Scale</a></li>
+<li><a href="#sourcemotionvolume">Source Motion: Volume</a></li>
+<li><a href="#sourcemotionalphafilter">Source Motion: Alpha Filter</a></li>
+<li><a href="#sourcemotionrotation">Source Motion: Rotation</a></li>
+
+<li><a href="#createsource">Create Source</a></li>
+<li><a href="#createscene">Create Scene</a></li>
+
+<li><a href="#playpausemedia">Play/Pause Media</a></li>
+<li><a href="#restartmedia">Restart Media</a></li>
+<li><a href="#stopmedia">Stop Media</a></li>
+<li><a href="#nextmedia">Next Media</a></li>
+<li><a href="#previousmedia">Previous Media</a></li>
+<li><a href="#setmediatime">Set Media Time</a></li>
+
+
+
+<li><a href="#triggerobshotkeyname">Trigger OBS Hotkey Name</a></li>
+<li><a href="#triggerobshotkeysequence">Trigger OBS Hotkey Sequence</a></li>
+
+<li><a href="#custompacket">Custom Packet</a></li>
+<li><a href="#obspullsourcevalue">OBS Pull Source Value</a></li>
+<li><a href="#obspullfiltervisibility">OBS Pull Filter Visibility</a></li>
+<li><a href="#fetchobsdata">Fetch OBS Data</a></li>
+
+
+</ul>
+</li></h1>
+
+<li><a href="#obsrecordingcommands">OBS Recording Commands</a>
+<ul>
+<li><a href="#togglestreaming">Toggle Streaming</a></li>
+<li><a href="#startstreaming">Start Streaming</a></li>
+<li><a href="#stopstreaming">Stop Streaming</a></li>
+<li><a href="#togglerecording">Toggle Recording</a></li>
+<li><a href="#startrecording">Start Recording</a></li>
+<li><a href="#stoprecording">Stop Recording</a></li>
+<li><a href="#pauserecording">Pause Recording</a></li>
+<li><a href="#resumerecording">Resume Recording</a></li>
+<li><a href="#togglereplaybuffer">Toggle Replay Buffer</a></li>
+<li><a href="#startreplaybuffer">Start Replay Buffer</a></li>
+<li><a href="#stopreplaybuffer">Stop Replay Buffer</a></li>
+<li><a href="#savereplaybuffer">Save Replay Buffer</a></li>
+
+</ul>
+</li>
+
+<li><a href="#lioranboardcommand">Other Commands</a>
+<ul>
+
+
+<li><a href="#mathchangevariablenew">Math: Change variable(new)</a></li>
+<li><a href="#mathvaluetransition">Math: Variable Transition</a></li>
+<li><a href="#mathclamp">Math: Clamp</a></li>
+<li><a href="#mathrandom">Math: Random</a></li>
+<li><a href="#mathstringtoreal">Math: String to Real</a></li>
+<li><a href="#mathhextoreal">Math: Hex to Real</a></li>
+<li><a href="#mathclearvalue">Math: Clear Variable</a></li>
+<li><a href="#mathgetvariabletype">Math: Get Variable Type</a></li>
+<li><a href="#mathtriggerpull">Math: Trigger Pull</a></li>
+
+<li><a href="#stringwildcardpull">String: Wildcard Pull</a></li>
+<li><a href="#stringgettriggertype">String: Get Trigger Type</a></li>
+<li><a href="#stringlength">String: Length</a></li>
+<li><a href="#stringdigits">String: Digits</a></li>
+<li><a href="#stringletters">String: Letters</a></li>
+<li><a href="#stringreplace">String: Replace</a></li>
+<li><a href="#stringlowercase">String: Lower Case</a></li>
+<li><a href="#stringuppercase">String: Upper Case</a></li>
+<li><a href="#stringposition">String: Position</a></li>
+<li><a href="#stringformat">String: Format</a></li>
+<li><a href="#stringcount">String: Count</a></li>
+<li><a href="#stringclamp">String: Clamp</a></li>
+<li><a href="#stringescape">String: Escape</a></li>
+<li><a href="#stringrealtostring">String: Real to String</a></li>
+<li><a href="#stringsoundnamepull">String: Sound Name Pull</a></li>
+
+<li><a href="#getalternateaccountinfo">Get Alternate Account Info</a></li>
+<li><a href="#setclipboard">Set Clipboard</a></li>
+<li><a href="#loadclipboard">Load Clipboard</a></li>
+
+<li><a href="#stackaddnew">Stack: Add (new)</a></li>
+<li><a href="#stackreplacenew">Stack: Replace (new)</a></li>
+<li><a href="#stackpull">Stack: Pull</a></li>
+<li><a href="#stackpeek">Stack: Peek</a></li>
+<li><a href="#stackfindnew">Stack: Find (new)</a></li>
+<li><a href="#stackgetsize">Stack: Get Size</a></li>
+<li><a href="#stackrandom">Stack: Random</a></li>
+<li><a href="#stackshuffle">Stack: Shuffle</a></li>
+<li><a href="#stackclear">Stack: Clear</a></li>
+<li><a href="#stackstringify">Stack: Stringify</a></li>
+<li><a href="#stackparse">Stack: Parse</a></li>
+<li><a href="#stacksort">Stack: Sort</a></li>
+<li><a href="#stackconcat">Stack: Concat</a></li>
+
+
+<li><a href="#repeatprevious">Repeat Previous</a></li>
+<li><a href="#twitchchatmessage">Twitch: Chat Message</a></li>
+<li><a href="#twitchopenwhispers">Twitch: Open Whispers</a></li>
+<li><a href="#twitchjoinchannel">Twitch: Join Channel</a></li>
+<li><a href="#twitchleavechannel">Twitch: Leave Channel</a></li>
+
+<li><a href="#buffercreate">Buffer: Create</a></li>
+<li><a href="#bufferdelete">Buffer: Delete</a></li>
+<li><a href="#bufferload">Buffer: Load</a></li>
+<li><a href="#buffersave">Buffer: Save</a></li>
+<li><a href="#bufferwrite">Buffer: Write</a></li>
+<li><a href="#bufferread">Buffer: Read</a></li>
+<li><a href="#bufferpeek">Buffer: Peek</a></li>
+<li><a href="#buffersetposition">Buffer: Set Position</a></li>
+<li><a href="#buffergetposition">Buffer: Get Position</a></li>
+<li><a href="#buffersetsize">Buffer: Set Size</a></li>
+<li><a href="#buffergetsize">Buffer: Get Size</a></li>
+<li><a href="#bufferexists">Buffer: Exists</a></li>
+<li><a href="#bufferbase64encode">Buffer: Base64 Encode</a></li>
+<li><a href="#bufferbase64decode">Buffer: Base64 Decode</a></li>
+<li><a href="#buffersha1hash">Buffer: SHA1 Hash</a></li>
+
+<li><a href="#filesavevalue">File: Save Value</a></li>
+<li><a href="#fileloadvalue">File: Load Value</a></li>
+<li><a href="#filesavestring">File: Save String</a></li>
+<li><a href="#fileloadstring">File: Load String</a></li>
+<li><a href="#filedeletesection">File: Delete Section</a></li>
+<li><a href="#filedeletekey">File: Delete Key</a></li>
+<li><a href="#filesectionexists">File: Section Exists</a></li>
+<li><a href="#filekeyexists">File: Key Exists</a></li>
+<li><a href="#triggerbutton">Trigger Button</a></li>
+<li><a href="#modifybutton">Modify Button</a></li>
+<li><a href="#clearbutton">Clear Button</a></li>
+<li><a href="#blockbutton">Block Button</a></li>
+<li><a href="#openurl">Open URL</a></li>
+<li><a href="#overtime">Overtime</a></li>
+<li><a href="#executeprogram">Execute Program</a></li>
+<li><a href="#commandline">Command Line</a></li>
+<li><a href="#sendtoextension">Send to Extension</a></li>
+<li><a href="#getdate">Get Date</a></li>
+<li><a href="#getfilesha1hash">Get File SHA1 Hash</a></li>
+<li><a href="#copylocalfile">Copy Local File</a></li>
+<li><a href="#popupmessage">Popup Message</a></li>
+<li><a href="#alertmessage">Alert Message</a></li>
+<li><a href="#comment">Comment</a></li>
+
+</ul>
+<li><a href="#deprecated">Deprecated commands</a>
+<ul>
+<li><a href="#mathchangevalueold">Math: Change Variable(old)</a></li>
+<li><a href="#mathvaluetovalue">Math: Variable to Variable</a></li>
+<li><a href="#stackadd">Stack: Add</a></li>
+<li><a href="#stackreplace">Stack: Replace</a></li>
+<li><a href="#stackfind">Stack: Find</a></li>
+<li><a href="#compareskipif">Compare: Skip if</a></li>
+<li><a href="#compareendif">Compare: End if</a></li>
+<li><a href="#compareredoif">Compare: Redo if</a></li>
+<li><a href="#compareredopreviousif">Compare: Redo Previous if</a></li>
+<li><a href="#comparevaluesskipif">Compare Variable: Skip if</a></li>
+<li><a href="#comparevaluesendif">Compare Variable: End if</a></li>
+<li><a href="#comparevaluesredoif">Compare Variable: Redo if</a></li>
+<li><a href="#comparevaluesredopreviousif">Compare Variable: Redo Previous if</a></li>
+</ul>
+</ul>
+</li>
+
+
+</ul>
+<hr> </hr>
+<h1><span id="commands">Commands</span></h1>
+<ul>
+<ul>
+<p>Commands are Various actions that you can set to your Buttons. This is like a small programming language to generate very specifict effect on your stream.</p>
+<p><strong>{Command name} [Parameters1] [Parameters2+] ... {Millisecond Delay}</strong></p>
+<p>To understand how these commands behave you just need to look at the <strong>Order</strong> they appear in and the <strong>Millisecond delay</strong>.</p>
+<p>It will go down the whole list and check in order which one has past its time limit and execute them once the delay has passed.</p>
+<p>The order in which they come up is only relevant if they have the same delay</p>
+<p>If your first command has 3000ms delay and the second one has 0ms, The second one will happen right away and the first one will happen after 3 seconds.</p>
+<p>Each command will only happen once unless re-enable or repeat is used.</p>
+<p>You can insert variable you created anywhere by doing /$variable_name$/</p>
+<p>If the parametter name has a * in the name, that mean its an adaptive box. Meaning...</p>
+<p>If you type numbers, it will take them as they are.</p>
+<p>If you type letters, it will regard it as a variable</p>
+<p>If you start the whole box with ' or " and end it with ' or ". It will regard it as text and remove the '/"(must start and end with the same one)</p>
+<p>If it is something like [x]letters it will regard it as a stack and look at the stack number and name.</p>
+<hr> </hr>
+</ul>
+
+<h1><span id="statements">Statements</span></h1>
+<ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="ifstatement">If statement</span></h3>
+<p>An if statement is a programming language execution where you compare 2 things and make a decision based on that.</p>
+<p>for exemple,  if Variable_name == 2, then it will perform what comes after it if the comparison is true. If not then it won't.</p>
+<p>Couple with an if statement is the "Else" section which will only happen if the if statement is false.</p>
+<p>Lets take our previous exemple. if Variable_name == 2</p>
+<p>Let's say Variable_name contains the number 2, then it will perform whats in the if statement and ignore what's in the else.</p>
+<p>If Variable_name is 3 or anything else but 2. then it will ignore what's in the if statement and perform what's in the else instead.</p>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+<p><strong>Field: Operator</strong></p>
+<ul>This is the type of operation you want to perform on the 2 things you want to compare.</ul>
+<ul>== if they're equal.</ul>
+<ul>!= if they're not equal.</ul>
+<ul>> if the first box is higher than the second box(does not work on 2 strings)</ul>
+<ul>< if the first box is smaller than the second box(does not work on 2 strings)</ul>
+<ul>>= if the first box is bigger or equal to the second box(does not work on 2 strings)</ul>
+<ul><= if the first box is smaller or equal to the second box(does not work on 2 strings)</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>Same as first field</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="orstatement">Or statement</span></h3>
+<p>OR statement is used in junction with a If statement. put it right under an if statment(inside of it) for it to work.</p>
+<p>You use this to check multiple values. So you can do if Variable_name == 2   or Variable_name == 4.</p>
+<p>That way, if its true to either it will perform what's in the if statement if not then what's in the else.</p>
+<p>You can add multiple of them and combine them with And statement as well but the order is important when doing so.</p>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+<p><strong>Field: Operator</strong></p>
+<ul>This is the type of operation you want to perform on the 2 things you want to compare.</ul>
+<ul>== if they're equal.</ul>
+<ul>!= if they're not equal.</ul>
+<ul>> if the first box is higher than the second box(does not work on 2 strings)</ul>
+<ul>< if the first box is smaller than the second box(does not work on 2 strings)</ul>
+<ul>>= if the first box is bigger or equal to the second box(does not work on 2 strings)</ul>
+<ul><= if the first box is smaller or equal to the second box(does not work on 2 strings)</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>Same as first field</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="andstatement">And statement</span></h3>
+<p>And statement is used in junction with a If statement. put it right under an if statment(inside of it) for it to work.</p>
+<p>You use this to check multiple values. So you can do if Variable_name == 2   and Variable_name == 4.</p>
+<p>So in this case, Variable_name can not be 2 and 4 at the same time, so this would always be false.</p>
+<p>Both have to be true for it to work.</p>
+<p>You can add multiple of them and combine them with And statement as well but the order is important when doing so.</p>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+<p><strong>Field: Operator</strong></p>
+<ul>This is the type of operation you want to perform on the 2 things you want to compare.</ul>
+<ul>== if they're equal.</ul>
+<ul>!= if they're not equal.</ul>
+<ul>> if the first box is higher than the second box(does not work on 2 strings)</ul>
+<ul>< if the first box is smaller than the second box(does not work on 2 strings)</ul>
+<ul>>= if the first box is bigger or equal to the second box(does not work on 2 strings)</ul>
+<ul><= if the first box is smaller or equal to the second box(does not work on 2 strings)</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>Same as first field</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="repeatstatement">Repeat</span></h3>
+<p>This will repeat all the commands inside of it for the amount of time you specify.</p>
+<p>This will be repeated instantly before it continues with what is below the repeat statement.</p>
+<p>You can put repeat inside repeat as well.</p>
+
+<p><strong>Field: Repeat Amount"</strong></p>
+<ul>The amount of time you want the repeat to work.</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="reenablestatement">Re-enable</span></h3>
+<p>Commands normally happen once and they're done.</p>
+<p>This will re-enable all the command inside of it if they already happened.</p>
+<p>This also requires the statement to be true to work but if it is false, the command inside of it will only happen once.</p>
+<p>If the statement is true, the re-enable will still be active unless it as accomplished its amount of time to be performed.</p>
+<p>You can also combine And/Or statement to this same way as you do for If statement.</p>
+<p>you can have repeat inside repeats.</p>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+<p><strong>Field: Operator</strong></p>
+<ul>This is the type of operation you want to perform on the 2 things you want to compare.</ul>
+<ul>== if they're equal.</ul>
+<ul>!= if they're not equal.</ul>
+<ul>> if the first box is higher than the second box(does not work on 2 strings)</ul>
+<ul>< if the first box is smaller than the second box(does not work on 2 strings)</ul>
+<ul>>= if the first box is bigger or equal to the second box(does not work on 2 strings)</ul>
+<ul><= if the first box is smaller or equal to the second box(does not work on 2 strings)</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>Same as first field</ul>
+<p><strong>Field: Reactivate(MS)"</strong></p>
+<ul>When the re-enable happen it won't turn of, so you can add a delay on the re-happening.</ul>
+<ul>if you set it to 0 it will repeat as fast as the refresh rate of lioranboard.</ul>
+<p><strong>Field: Amount"</strong></p>
+<ul>This is the maximum amount of time a re-enable can happen 0 and under will be unlimited amount of times.</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="exitstatement">Exit if</span></h3>
+<p>This will cancel all commands or a button entirely if true and won't perform anymore commands from this point on until the button is pressed again.</p>
+<p>Won't cancel Sound effect or macros that the button does.</p>
+<p>And/Or statement cna be placed under this as well..</p>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+<p><strong>Field: Operator</strong></p>
+<ul>This is the type of operation you want to perform on the 2 things you want to compare.</ul>
+<ul>== if they're equal.</ul>
+<ul>!= if they're not equal.</ul>
+<ul>> if the first box is higher than the second box(does not work on 2 strings)</ul>
+<ul>< if the first box is smaller than the second box(does not work on 2 strings)</ul>
+<ul>>= if the first box is bigger or equal to the second box(does not work on 2 strings)</ul>
+<ul><= if the first box is smaller or equal to the second box(does not work on 2 strings)</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>Same as first field</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="breakstatement">Break if</span></h3>
+<p>This will break out of a repeat or re-enable statement if true.</p>
+<p>if it's inside multiple repeat or re-enable it will cancel the one its currently in.</p>
+<p>It will also cancel every command inside of that as well if they haven't happened yet.</p>
+<p>Re-enable will be turned off as well.</p>
+<p>And/Or statement cna be placed under this as well..</p>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+<p><strong>Field: Operator</strong></p>
+<ul>This is the type of operation you want to perform on the 2 things you want to compare.</ul>
+<ul>== if they're equal.</ul>
+<ul>!= if they're not equal.</ul>
+<ul>> if the first box is higher than the second box(does not work on 2 strings)</ul>
+<ul>< if the first box is smaller than the second box(does not work on 2 strings)</ul>
+<ul>>= if the first box is bigger or equal to the second box(does not work on 2 strings)</ul>
+<ul><= if the first box is smaller or equal to the second box(does not work on 2 strings)</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>Same as first field</ul>
+</ul>
+
+</ul>
+<h1><span id="obssourcecommands">OBS Source Commands</span></h1>
+<ul>
+<p>Commands sent throught OBSwebsocket by palakis.</p>
+<p><a href="https://obsproject.com/forum/resources/obs-websocket-remote-control-of-obs-studio-made-easy.466/">Get the OBSWebsocket plugin to support these commands.</a> <p>
+
+<hr> </hr>
+<ul>
+<h3><span id="sceneswitch">Scene Switch</span></h3>
+<p>Switch to the selected scene with normal transition.</p>
+<p><strong>Field: scene-name</strong></p>
+<ul>Name of the scene </ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="changescenetransition">Change Scene Transition</span></h3>
+<p>Temporarily change the transition of a scene so next time you switch it will be the given transition.</p>
+<p>This should only happen once.</p>
+<p><strong>Field: scene-name</strong></p>
+<ul>Name of the scene you are going to switch to</ul>
+<p><strong>Field: transitionName</strong></p>
+<ul>Name of the transition to use</ul>
+<p><strong>Field: transitionDuration</strong></p>
+<ul>Duration of the transition in millisecond</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="removescenetransition">Remove Scene Transition</span></h3>
+<p>remove the temporarily added transition</p>
+<p><strong>Field: scene-name</strong></p>
+<ul>Name of the scene that had a temporary transitiona added to it.</ul>
+</ul>
+
+<hr> </hr>
+<ul>
+<h3><span id="settransitionsettings">Set Transition Settings</span></h3>
+<p>Set settings on a transition</p>
+<p><strong>Field: transitionName</strong></p>
+<ul>Name of the transition to modify.</ul>
+<p><strong>Field: transitionSettings</strong></p>
+<ul>Settings, This is an object so include which ever value you need here.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="releasetbar">Release Transition Bar</span></h3>
+<p>Release the Transition Bar finishing the transition.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="settbarposition">Set Transition Bar Position</span></h3>
+<p>Set the Transition Bar position.</p>
+<p><strong>Field: position</strong></p>
+<ul>Position. must be between 0.0 and 1.0</ul>
+<p><strong>Field: release</strong></p>
+<ul>Release True or False.</ul>
+</ul>
+
+
+
+<hr> </hr> <ul>
+<h3><span id="sourcemute">Source Mute</span></h3>
+<p>Mute the sound of a source.</p>
+<p><strong>Field: source</strong></p>
+<ul>Name of the source </ul>
+<p><strong>Field: mute</strong></p>
+<ul>Select if true/on or false/off.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcetogglemute">Source Toggle Mute</span></h3>
+<p>Toggle on and off the sound of a source.</p>
+<p><strong>Field: source</strong></p>
+<ul>Name of the source </ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="changeaudiomonitortype">Change Audio Monitor Type</span></h3>
+<p>Change the monitoring type of an andio source, that's the option you see when you right click audio and go in advance.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the audio source </ul>
+<p><strong>Field: monitorType</strong></p>
+<ul>type of monitoring to use.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcechangevisibility">Source Change Visibility</span></h3>
+<p>Change the visibility of a source.</p>
+<p><strong>Field: scene-name</strong> (Optionnal)</p>
+<ul>Which scene the source is in. Leave blank for current active scene.</ul>
+<p><strong>Field: item</strong></p>
+<ul>Name of the source to change visibility.</ul>
+<p><strong>Field: visible</strong></p>
+<ul>Visibility type, True,False or Toggle.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcechangeposition">Source Change Position</span></h3>
+<p>Change the position of a source.</p>
+<p><strong>Field: scene-name</strong> (Optionnal)</p>
+<ul>Which scene the source is in. Leave blank for current active scene.</ul>
+<p><strong>Field: item</strong></p>
+<ul>Name of the source to change position.</ul>
+<p><strong>Field: X</strong> (Optionnal)</p>
+<ul>X position to set the source at. Can leave blank to not modify it.</ul>
+<p><strong>Field: Y</strong> (Optionnal)</p>
+<ul>Y position to set the source at. Can leave blank to not modify it.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcechangevolume">Source Change Volume</span></h3>
+<p>Change the Volume of a source.</p>
+<p><strong>Field: source</strong></p>
+<ul>Which scene the source is in. Leave blank for current active scene.</ul>
+<p><strong>Field: Volume %</strong></p>
+<ul>Percentage to set the volume at, between 0 and 100.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcechangescale">Source Change Scale</span></h3>
+<p>Change the size of a source.</p>
+<p>The way it's resized is based on what the source's point of origin is set at in OBS.</p>
+<p><strong>Field: scene-name</strong> (Optionnal)</p>
+<ul>Which scene the source is in. Leave blank for current active scene.</ul>
+<p><strong>Field: item</strong></p>
+<ul>Name of the source to change size.</ul>
+<p><strong>Field: X Scale</strong> (Optionnal)</p>
+<ul>X Scaling to set the source at. Can leave blank to not modify it. 1.0=100%  </ul>
+<p><strong>Field: Y Scale</strong> (Optionnal)</p>
+<ul>Y Scaling to set the source at. Can leave blank to not modify it. 1.0=100%</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcechangerotation">Source Change Rotation</span></h3>
+<p>Change the rotation of a source.</p>
+<p>The center point of the rotation is based on the "Positional alignment" found in the edit transform window in obs.</p>
+<p><strong>Field: scene-name</strong> (Optionnal)</p>
+<ul>Which scene the source is in. Leave blank for current active scene.</ul>
+<p><strong>Field: item</strong></p>
+<ul>Name of the source to change rotation.</ul>
+<p><strong>Field: rotation</strong></p>
+<ul>Rotation angle to change the source. 0=normal  180=turned around  360=normal </ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcechangesettings">Source Change Settings</span></h3>
+<p>Change special setting from a source, for exemple you could set a Media Source and insert this into the setting box.</p>
+<p>{"local_file": "J:/Desktop/video.mp4"}  </p>
+<p>That way it will chance the video being played by that source to the one that's on the path location</p>
+<p></p>
+<p><strong>Field: sourceName</strong> </p>
+<ul>Name of the source to change settings.</ul>
+<p><strong>Field: sourceSettings</strong></p>
+<ul>The settings to be included. </ul>
+<ul>This is JSON format so the {} must be present on both side</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="textgdichangetext">Text GDI+ Change Text</span></h3>
+<p>Change the text of a Text GDI+ source.</p>
+<p></p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to be changed</ul>
+<p><strong>Field: text</strong></p>
+<ul>the new text.</ul>
+</ul>
+<hr> </hr> <ul>
+<h3><span id="freetype2changetext">Freetype 2 Change Text</span></h3>
+<p>Change the text of a Freetype 2 source.</p>
+<p></p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to be changed</ul>
+<p><strong>Field: text</strong></p>
+<ul>the new text.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="filterchangevisibility">Filter Change Visibility</span></h3>
+<p>Change visibility of a filter in a given source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Which source to change the filter visiblity.</ul>
+<p><strong>Field: filterName</strong></p>
+<ul>Name Filter to change visibility.</ul>
+<p><strong>Field: filterEnabled</strong></p>
+<ul>Set the source to a specified visibility.  on/off/toggle</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="filterchangesettings">Filter Change Settings</span></h3>
+<p>Change or add settings to a filter in a given source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Which source to change the filter settings.</ul>
+<p><strong>Field: filterName</strong></p>
+<ul>Name Filter to change settings.</ul>
+<p><strong>Field: filterSettings</strong> (JSON string)</p>
+<ul>The settings you want to set on the filter. JSON format.</ul>
+<ul>You will need to know the specifict setting names to be able to use this. you can look at the OBS files to figure this out.</ul>
+<ul>Ex: <strong>{"db":5.0}</strong> Can be set to a Gain sound filter to set the gain to 5 DB.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcemotionposition">Source Motion: Position</span></h3>
+<p>Move a Source from point A to point B over a given duration.</p>
+<p><strong>Field: scene</strong></p>
+<ul>Which scene the source is in.</ul>
+<p><strong>Field: source</strong></p>
+<ul>Name of the source to move.</ul>
+<p><strong>Field: St.X</strong></p>
+<ul>Starting X position.</ul>
+<p><strong>Field: St.Y</strong></p>
+<ul>Starting Y position.</ul>
+<p><strong>Field: Fi.X</strong></p>
+<ul>Final X position.</ul>
+<p><strong>Field: Fi.Y</strong></p>
+<ul>Final Y position.</ul>
+<p><strong>Field: Dur.(MS)</strong></p>
+<ul>the duration of the transition. In millisecond.</ul>
+<p><strong>Field: Smooth</strong></p>
+<ul>Type of transition, None= Normal, Out=Start out fast and end slow,  In=Start out slow and end fast,  In/Out= Start slow gets faster then slows down at the end again.</ul>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="sourcemotionpositioncurve">Source Motion: Position Curve</span></h3>
+<p>Move a Source from point A to point B over a given duration AND curves it in a circle pattrern.</p>
+<p>Witch this you can make a source complete an half circle or have a slight curve in its transition</p>
+<p><strong>Field: scene</strong></p>
+<ul>Which scene the source is in.</ul>
+<p><strong>Field: source</strong></p>
+<ul>Name of the source to move.</ul>
+<p><strong>Field: Start X</strong></p>
+<ul>Starting X position.</ul>
+<p><strong>Field: Start Y</strong></p>
+<ul>Starting Y position.</ul>
+<p><strong>Field: Final X</strong></p>
+<ul>Final X position.</ul>
+<p><strong>Field: Final Y</strong></p>
+<ul>Final Y position.</ul>
+<p><strong>Field: Curve %</strong></p>
+<ul>The amplitude of the curve. Can be negative or over 100</ul>
+<ul>100%= a perfect half circle</ul>
+<ul>0%=straight line with a slower start and slower finish</ul>
+<ul>-200%=Elongated half circle on the opposite side.</ul>
+<p><strong>Field: Dur.(MS)</strong></p>
+<ul>the duration of the transition. In millisecond.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcemotionscale">Source Motion: Scale</span></h3>
+<p>Resize a Source from Size A to size B over a given duration.</p>
+<p>Due to the way OBS source resizing work this might look a bit snappy sometimes</p>
+<p>The way it's resized is based on what the source' point of origin is set at in OBS.</p>
+<p><strong>Field: scene</strong></p>
+<ul>Which scene the source is in.</ul>
+<p><strong>Field: source</strong></p>
+<ul>Name of the source to move.</ul>
+<p><strong>Field: St.sX</strong></p>
+<ul>Starting X Size.</ul>
+<p><strong>Field: St.sY</strong></p>
+<ul>Starting Y Size.</ul>
+<p><strong>Field: Fi.sX</strong></p>
+<ul>Final X Size.</ul>
+<p><strong>Field: Fi.sY</strong></p>
+<ul>Final Y Size.</ul>
+<p><strong>Field: Dur.(MS)</strong></p>
+<ul>the duration of the transition. In millisecond.</ul>
+<p><strong>Field: Smooth</strong></p>
+<ul>Type of transition, None= Normal, Out=Start out fast and end slow,  In=Start out slow and end fast,  In/Out= Start slow gets faster then slows down at the end again.</ul>
+</ul>
+
+
+
+<hr> </hr> <ul>
+<h3><span id="sourcemotionvolume">Source Motion: Volume</span></h3>
+<p>Change the volume of a given source from volume A to B over a duration.</p>
+
+<p><strong>Field: source</strong></p>
+<ul>Name of the source to change the volume.</ul>
+<p><strong>Field: Start Vol%</strong></p>
+<ul>Starting volume percentage. 0-100</ul>
+<p><strong>Field: Final Vol%</strong></p>
+<ul>Final volume percentage. 0-100</ul>
+<p><strong>Field: Dur.(MS)</strong></p>
+<ul>the duration of the transition. In millisecond.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcemotionalphafilter">Source Motion: Alpha Filter</span></h3>
+<p>Change the transparency of a source over a duration.</p>
+<p><strong>REQUIRES</strong> a Color Correction filter to work.</p>
+<p><strong>Field: source</strong></p>
+<ul>Name of the source to change the transparency.</ul>
+<p><strong>Field: filterName</strong></p>
+<ul>Name of the filter. Must be a Color Correction filter.</ul>
+<p><strong>Field: St.Opac%</strong></p>
+<ul>Starting Transparency percentage. 0-100 for any color correction created before OBS 27, 0-1 for any color correction created from 27.0 and up</ul>
+<p><strong>Field: Fi.Opac%</strong></p>
+<ul>Final Transparency percentage. 0-100 for any color correction created before OBS 27, 0-1 for any color correction created from 27.0 and up</ul>
+<p><strong>Field: Dur.(MS)</strong></p>
+<ul>the duration of the transition. In millisecond.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sourcemotionrotation">Source Motion: Rotation</span></h3>
+<p>Change the Rotation of a source over a duration.</p>
+<p>The center point of the rotation is based on the "Positional alignment" found in the edit transform window in obs.</p>
+<p><strong>Field: scene</strong></p>
+<ul>Which scene the source is in.</ul>
+<p><strong>Field: source</strong></p>
+<ul>Name of the source to change the rotation.</ul>
+<p><strong>Field: St.Rota</strong></p>
+<ul>Starting Rotation. 0-360</ul>
+<p><strong>Field: Fi.Rota</strong></p>
+<ul>Final Rotation. 0-360</ul>
+<p><strong>Field: Dur.(MS)</strong></p>
+<ul>the duration of the transition. In millisecond.</ul>
+<p><strong>Field: Smooth</strong></p>
+<ul>Type of transition, None= Normal, Out=Start out fast and end slow,  In=Start out slow and end fast,  In/Out= Start slow gets faster then slows down at the end again.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="createsource">Create Source</span></h3>
+<p>Create a new source</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source you want to create, must be unique.</ul>
+<p><strong>Field: sourceKind</strong></p>
+<ul>Type of the source you want to create.</ul>
+<ul>Here are the possible source you can create.</ul>
+<ul><ul><strong>ffmpeg_source</strong> - Media Source</ul></ul>
+<ul><ul><strong>vlc_source</strong> - VLC media source</ul></ul>
+<ul><ul><strong>image_source</strong> -  Image Source</ul></ul>
+<ul><ul><strong>slideshow</strong> - Image slide show</ul></ul>
+<ul><ul><strong>text_ft2_source</strong> - Free Type 2 text source</ul></ul>
+<ul><ul><strong>text_gdiplus</strong> - Text GDI+ source</ul></ul>
+<ul><ul><strong>browser_source</strong> -  Browser source</ul></ul>
+<ul><ul><strong>wasapi_input_capture</strong> - Audio Input capture</ul></ul>
+<ul><ul><strong>wasapi_output_capture</strong> - Audio Output Capture</ul></ul>
+<ul><ul><strong>color_source</strong> - Color source</ul></ul>
+<ul><ul><strong>monitor_capture</strong> - Display Capture</ul></ul>
+<ul><ul><strong>window_capture</strong> - Window capture</ul></ul>
+<ul><ul><strong>game_capture</strong> - Game Capture</ul></ul>
+<ul><ul><strong>dshow_input</strong> - Capture device(webcam)</ul></ul>
+<ul><ul><strong>dshow_input_replay</strong> - Video Capture Device with replay buffer</ul></ul>
+<ul>For source from plugins you will need to figure it out on your own by looking in the OBS JSON save file.</ul>
+<p><strong>Field: sceneName</strong></p>
+<ul>Scene to put the source in. This will add it at the top of the list.</ul>
+<p><strong>Field: sourceSettings</strong></p>
+<ul>Setting that should be set on the source, same as change source settings.</ul>
+<p><strong>Field: setVisible</strong></p>
+<ul>If the source should first be visible or not.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="createscene">Create Scene</span></h3>
+<p>Create a new scene.</p>
+<p><strong>Field: sceneName</strong></p>
+<ul>Name of the scene you wish to create, must be unique.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="playpausemedia">Play/Pause Media</span></h3>
+<p>Pause or plays a media source, Can be both Media source or VLC source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to play or pause.</ul>
+<p><strong>Field: playPause</strong></p>
+<ul>True =pause or False =play</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="restartmedia">Restart Media</span></h3>
+<p>Restart a media source, can be both Media source or VLC source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to restart.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stopmedia">Stop Media</span></h3>
+<p>Stop a media source, can be both Media source or VLC source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to stop.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="nextmedia">Next Media</span></h3>
+<p>Next media in a VLC source, can only be a VLC source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to skip.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="previousmedia">Previous Media</span></h3>
+<p>Previous media in a VLC source, can only be a VLC source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to go back.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="setmediatime">Set Media Time</span></h3>
+<p>Set the time of a media, Can be both Media source or VLC source.</p>
+<p><strong>Field: sourceName</strong></p>
+<ul>Name of the source to change time.</ul>
+<p><strong>Field: timestamp</strong></p>
+<ul>Set media time, time in in milliseconds.</ul>
+</ul>
+
+
+
+<hr> </hr> <ul>
+<h3><span id="triggerobshotkeyname">Trigger OBS Hotkey Name</span></h3>
+<p>Executes hotkey routine, identified by hotkey unique name</p>
+<p><strong>Field: hotkeyName</strong></p>
+<ul>Unique name of the hotkey, as defined when registering the hotkey (e.g. "ReplayBuffer.Save").</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="triggerobshotkeysequence">Trigger OBS Hotkey Sequence</span></h3>
+<p>Executes hotkey routine.</p>
+<p>This will not actually perform the key presses.</p>
+<p>This will simply activate any hotkey action you've set.</p>
+<p>Keep in mind that if your hotkey is ctrl+A , setting ctrl+shift+alt+OBS_KEY_A it will trigger it.</p>
+<p><strong>Field: keyId</strong></p>
+<ul>Main key id such as A or F1 but it has to be the OBS name for it such has OBS_KEY_A</ul>
+<ul>You can find all the names <a href="https://github.com/obsproject/obs-studio/blob/master/libobs/obs-hotkeys.h">Here.</a> </ul>
+<p><strong>Field: shift</strong></p>
+<ul>If Shift key should be included</ul>
+<p><strong>Field: alt</strong></p>
+<ul>If Alt key should be included</ul>
+<p><strong>Field: control</strong></p>
+<ul>If Ctrl key should be included</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="custompacket">Custom Packet</span></h3>
+<p>Send a custom packet to the OBSwebsocket plugin in JSON format.</p>
+<p><a href="https://github.com/Palakis/obs-websocket/blob/4.7.0/docs/generated/protocol.md">See OBSwebsocket protocol for this.</a></p>
+<p><strong>Field: String</strong></p>
+<ul>JSON string to send to obswebsocket. Comes with an exemple to toggle studio mode.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="obspullsourcevalue">OBS Pull Source Value</span></h3>
+<p>Pull the last known value of a source, Will return 0 if the source doesn't exist.</p>
+<p><strong>Field: Scene</strong></p>
+<ul>The Scene which the source reside in, REQUIRED since they all contain different value within different scene(Not required for Volume pull).</ul>
+<ul>Keep in mind that if the source is inside a group, the value returned may not be accurate, you may have to put the group name instead of the scene name.</ul>
+<p><strong>Field: Source</strong></p>
+<ul>The Source to wish to get information on</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the values in.</ul>
+<p><strong>Field: Pull</strong></p>
+<ul>X/Y Position return the position of source</ul>
+<ul>X/Y Scale return the size of source,  1=normal size</ul>
+<ul>Rotation returns the degree of rotation, between 0 and 360.(Note: OBSwebsocket doesn't send that info at the start so this will return 0 until the source is changed)</ul>
+<ul>Volume returns the percentage volume level, between 0-100</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="obspullfiltervisibility">OBS Pull Filter Visibility</span></h3>
+<p>Pull the last known visibility of a specifict filter</p>
+<p><strong>Field: Source</strong></p>
+<ul>Name of the source to get the filter from</ul>
+<p><strong>Field: Filter</strong></p>
+<ul>Name of the filter to get visibility from</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the values in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="fetchobsdata">Fetch OBS Data</span></h3>
+<p>Allows you to get data from obs and save that in a Variable.</p>
+<p>You have to send an obswebsocket Request command. such has GetSceneItemProperties,GetStats,GetSourceSettings and many others</p>
+<p><a href="https://github.com/Palakis/obs-websocket/blob/4.7.0/docs/generated/protocol.md">See OBSwebsocket protocol for this.</a></p>
+<p>Exemple: {{"request-type":"GetStats"},fps,value_name,true}  will set value_name to the FPS of your stream</p>
+<p>Please keep in mind that since this is over a tcp connection, the value won't be saved instantly. </p>
+<p>you will have to wait a bit before you can see the content of the Variable. So execute this in advance before you start doing your things.</p>
+<p>in general you can expect this to reply on the next frame, but nothing is garanteed even over localhost. so 50ms in advance should be more than enough.</p>
+<p><strong>Field: Obs command</strong></p>
+<ul>Works the same a custompacket but you need to homit the "message-id" part</ul>
+<ul>So instead of sending <strong>{"request-type":"GetStats","message-id":"1000"}</strong> you just send <strong>{"request-type":"GetStats"}</strong></ul>
+<ul>Curly brace must be included</ul>
+<p><strong>Field: Fetch Value</strong></p>
+<ul>The name of the value you wish to get. if its an object value you need to include that.</ul>
+<ul>Such as to get the X position through GetSceneItemProperties, you need to enter position.x</ul>
+<ul>can also include array brackets. If for some reason one of the variable you want to get has dots in the name switch as</ul>
+<ul>{"settings":{"Filter.Transform.Rotation.X":123}}</ul>
+<ul>Naturaly you'd try to search for settings.Filter.Transform.Rotation.X and lioranboard would try to look for those.</ul>
+<ul>but they dont exist, what you can do instead if this kind of thing happen is</ul>
+<ul>settings.(Filter.Transform.Rotation.X)</ul>
+<ul>If lioranboard sees ( after a dot, it will ignore all dots until ). is found and remove the () from both sides</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>The name of the variable to save the data under.</ul>
+<p><strong>Field: Turn to real</strong></p>
+<ul>whatever you expect a read or a string.</ul>
+</ul>
+
+
+</ul>
+
+
+<h1><span id="obsrecordingcommands">OBS Recording Commands</span></h1>
+<ul>
+
+<hr> </hr> <ul>
+<h3><span id="togglestreaming">Toggle Streaming</span></h3>
+<p>Toggle Streaming on and off.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="startstreaming">Start Streaming</span></h3>
+<p>Start a new Stream.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stopstreaming">Stop Streaming</span></h3>
+<p>Stop the Stream.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="togglerecording">Toggle Recording</span></h3>
+<p>Toggle Recording on and off.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="startrecording">Start Recording</span></h3>
+<p>Start a new Recording.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stoprecording">Stop Recording</span></h3>
+<p>Stop current Recording.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="pauserecording">Pause Recording</span></h3>
+<p>Pause the ongoing Recording.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="resumerecording">Resume Recording</span></h3>
+<p>Resume the paused Recording.</p>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="togglereplaybuffer">Toggle Replay Buffer</span></h3>
+<p>Toggle the replay buffer.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="startreplaybuffer">Start Replay Buffer</span></h3>
+<p>Start the replay buffer.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stopreplaybuffer">Stop Replay Buffer</span></h3>
+<p>Stop the replay buffer.</p>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="savereplaybuffer">Save Replay Buffer</span></h3>
+<p>Save the replay buffer.</p>
+</ul>
+
+</ul>
+
+<h1><span id="lioranboardcommand">LioranBoard Commands</span></h1>
+<ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathchangevariablenew">Math: Change variable(new)</span></h3>
+<p>Set/create or modify an existing variable.</p>
+<p>Those variable can be used in adaptive boxes.</p>
+<p>They can also be used in any parametter by inserting it by using /$ and $/ such as  /$variable_name$/</p>
+<p>Inserting a variable in that way will simply incorporate it as text right before the command happens</p>
+<p>You should ONLY user letters number and _ for variable name.</p>
+<p>And only start with a letter or _</p>
+<p>Starting with a number will make the variable unreconizable by adaptive boxes.</p>
+<p><strong>Field: Variable name"</strong></p>
+<ul>The name of the variable you wish to save.</ul>
+<ul>Should contain only letters,numbers and _.</ul>
+<ul>Should never start with a number.</ul>
+<p><strong>Field: Operator</strong></p>
+<ul>This is the type of operation you want to perform on the 2 things you want to combine.</ul>
+<ul>= Set to whatever is in the second box.</ul>
+<ul>+= Add whatever is in the second box to the first one.</ul>
+<ul>-= Subtract whatever is in the second box to the first one.</ul>
+<ul>Multiply, multiply whatever is in the first box by what's inside the second one.</ul>
+<ul>Divine, Divide whatever is in the first box by what's inside the second one.</ul>
+<ul>DIV same as divide but will not return the decimal part</ul>
+<ul>MOD Will return the reminder of a division</ul>
+<ul>&= ^= |= bitwise And,Xor,or</ul>
+<ul>cos,sin,tan will do those mathematical formula.</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathvaluetransition">Math: Variable Transition</span></h3>
+<p>Transition a Variable from a starting number to a final number over a duration.</p>
+<p>if you set the start value to 0, final value to 1 and Duration to 1000, at the start the value will be 0 and will change to 1 after 1 second.</p>
+<p>if you set the start value to 10, final value to 20 and Duration to 1000, at the start the value will be 10 and it will increase by 1 every 100ms and end at 20.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string), can be anything you like including space and numbers</ul>
+<p><strong>Field: Start Value</strong></p>
+<ul>Start value of the transition</ul>
+<p><strong>Field: Final Value</strong></p>
+<ul>Final value of the transition</ul>
+<p><strong>Field: Allow Float</strong></p>
+<ul>if the value can be a float, if false then the value will be rounded down(floored)</ul>
+<p><strong>Field: Dur.(MS)</strong></p>
+<ul>Duration of the transition</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathclamp">Math: Clamp</span></h3>
+<p>Clamps a variable between 2 value</p>
+<p> if the value is below the minimum, it will set it at minimum, same with max.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong> or will be created here if does not exist</ul>
+<p><strong>Field: Min</strong></p>
+<ul>Minimum value allow.</ul>
+<p><strong>Field: Max</strong></p>
+<ul>Maximum value possible.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathrandom">Math: Random</span></h3>
+<p>Randomize a Variable. (well be a int not a float.)</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong> or will be created here if does not exist</ul>
+<p><strong>Field: Min</strong></p>
+<ul>Minimum value possible.</ul>
+<p><strong>Field: Max</strong></p>
+<ul>Maximum value possible.</ul>
+<p><strong>Field: Float</strong></p>
+<ul>Return a float variable or not.</ul>
+<ul>If true, the value returned can never be exactly min or max.</ul>
+<ul>If you set min 0 and max 1, the value returned will be between 0 and 1, never 0 or 1.</ul>
+<ul>If false, the value returned can be anything between min and max, including min and max with all equal chance.</ul>
+<ul>Any float value included in min or max will be omitted if false.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathclearvalue">Math: Clear Variable</span></h3>
+<p>Delete a Variable from the list(press tab in the receiver main screen to see the list)</p>
+<p>This only exist so you can delete temporary Variable you are using.</p>
+<p>In case you want to keep the Variable window clean and uncluttered.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to clear/delete.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathstringtoreal">Math: String to Real</span></h3>
+<p>Turn a string into a real number, make sure your string is a digits only string or this might return 0, String "Hello world" will return 0. String "-1.20" will return -1.20;</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the string as a real.</ul>
+<p><strong>Field: String Variable</strong></p>
+<ul>Name of the Variable containing the string that you wish to become a real.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathhextoreal">Math: Hex to Real</span></h3>
+<p>turn a hex string into a real number</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the hex as a real.</ul>
+<p><strong>Field: Hex String</strong></p>
+<ul>Hex to turn.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathgetvariabletype">Math: Get Variable Type</span></h3>
+<p>Will return the type of variable it is.</p>
+<p>the value returned will be a string either.</p>
+<p><strong>number</strong> if a number</p>
+<p><strong>string</strong> if some text</p>
+<p><strong>undefined</strong> if the variable does not exists</p>
+<p><strong>Field: Variable Name</strong></p>
+<ul>The variable to check.</ul>
+<p><strong>Field: Variable Save</strong></p>
+<ul>The variable to save the result in.</ul>
+</ul>
+
+
+
+<hr> </hr> <ul>
+<h3><span id="mathtriggerpull">Math: Trigger Pull</span></h3>
+<p>This is used in combination with any Triggers to pull variable from the trigger.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to store the pull in.</ul>
+<p><strong>Field: Pull value</strong></p>
+<ul>Values to pull from triggers</ul>
+<ul><strong>Bits Trigger</strong></ul>
+<ul>[User Name]0 name of the person who donated the bits(Display name is not delivered during bits notification)</ul>
+<ul>[User ID] User id of the person</ul>
+<ul>[Amount]1 Amount of bits donated.</ul>
+<ul>[Total Amount]2 Amount TOTAL of bits donated ever by that person.</ul>
+<ul>[Message]3 Message of the person</ul>
+<ul><strong>Subscriber Trigger</strong></ul>
+<ul>[User Name]0 of the person who subbed or gifted the sub.</ul>
+<ul>[Display Name]6 Display name of the subber</ul>
+<ul>[User ID] User id of the sub or gifter</ul>
+<ul>[Gifted User Name]3 Recipient if the sub was gifted</ul>
+<ul>[Gifted Display Name]7 Display name of the recipient</ul>
+<ul>[Gifted User ID] User id of gifted</ul>
+<ul>[Tier]1 Tier of the sub  returns  "Tier 1" "Tier 2" "Tier 3" or "Prime"</ul>
+<ul>[Context]2 Context of the sub  returns  "sub" "resub" "subgift" or "anonsubgift"</ul>
+<ul>[Message]4 sub Message</ul>
+<ul>[Month]5 amount of month total(will return 0 if not found)</ul>
+<ul>[Community]8 if its a community sub or not  0 no  1 yes</ul>
+<ul><strong>Channel point redeem trigger</strong></ul>
+<ul>[User Name]0 Name of the person redeeming.(display name unprovided)</ul>
+<ul>[Display Name]Display name of redeemer</ul>
+<ul>[User ID] User id of the redeemer</ul>
+<ul>[Redeem Title]1 Name of the redeem</ul>
+<ul>[Message]2 User Message (if entering a message is required)</ul>
+<ul>[Cost]5 Cost of the redeem</ul>
+<ul>[Image]6 Image url of the biggest size, will return the defaut crystal ball if none</ul>
+<ul>[Reward ID]3 Reward ID of the specifict channel point</ul>
+<ul>[Redeem ID]4 Redeem ID of the redemption itself, so you can cancel or fulfill it.</ul>
+<ul><strong>Chat message trigger</strong></ul>
+<ul>[User Name]2 user name of the person</ul>
+<ul>[Display Name]0 Display name of the person that sent the message</ul>
+<ul>[User ID] User ID of the chatter</ul>
+<ul>[Message]1 The whole message</ul>
+<ul>[Emote List]3 Emotes list, formated as such <strong>88:6-13/25:17-21,23-27</strong> (FirstEmoteID:starts-end/SecondEmoteID:start-end,start-end) for message <strong>Hello PogChamp , Kappa Kappa</strong></ul>
+<ul><ul>get emotes image by id at this URL <strong>https://static-cdn.jtvnw.net/emoticons/v1/EMOTEID/1.0</strong> can change 1.0 to 2.0 or 3.0 to get the bigger size </ul></ul>
+<ul>[Badge List]4, formated as such <strong>broadcaster/1,subscriber/0</strong>(FirstBadgeName/version,SecondBadgeName/version)</ul>
+<ul><ul>You can find a JSON of all the badges here(there is lots of them) <strong>https://badges.twitch.tv/v1/badges/global/display</strong> to find the badge in the JSON just look for <strong>BadgeList.badge_sets[BADGENAME].versions[VERSION].image_url_1x</strong> change 1x to whichever size you want</ul></ul>
+<ul><ul>For Sub badge and other channel specifict badges you must get them with this link <strong>https://badges.twitch.tv/v1/badges/channels/CHANNEL_ID/display</strong></ul></ul>
+<ul>[Channel]5 Channel the message is coming from, will return <strong>w</strong> if it's a whisper.</ul>
+<ul>[Name Color]6 hex color code of the chatter if it shows a different color then what you see then that's cause they never set their color before.</ul>
+<ul><strong>raid and host</strong></strong></ul>
+<ul>[User Name]0 Name of the raider (only the display name is delivered during a host)</ul>
+<ul>[Display Name]2 Display name of the hoster/Raider</ul>
+<ul>[User ID] User id of the raider(raid only)</ul>
+<ul>[Amount]1 Amount of viewer</ul>
+<ul><strong>Channel point redeem trigger with message</strong></ul>
+<ul>[User Name]0 Name of the person redeeming.(display name unprovided)</ul>
+<ul>[Display Name]Display name of redeemer</ul>
+<ul>[User ID] User id of the redeemer</ul>
+<ul>[Redeem Title]1 Name of the redeem</ul>
+<ul>[Message]2 Full User Message</ul>
+<ul>[Cost]5 Cost of the redeem</ul>
+<ul>[Image]6 Image url of the biggest size, will return the defaut crystal ball if none</ul>
+<ul>[Reward ID]3 Reward ID of the specifict channel point</ul>
+<ul>[Redeem ID]4 Redeem ID of the redemption itself, so you can cancel or fulfill it.</ul>
+<ul><strong>Gift Sub Amount</strong></ul>
+<ul>[User Name]0 Name of the gifter (ananonymousgifter if anon gift subs).</ul>
+<ul>[Display Name]1 Display Name of the gifter (AnAnonymousGifter if anon gift subs).</ul>
+<ul>[User ID] User id of the gifter</ul>
+<ul>[Amount]2 Amount of subs gifted.</ul>
+<ul>[Tier]3 type of tiers, will return "Tier 1","Tier 2" or "Tier 3".</ul>
+<ul><strong>Extension Trigger</strong></ul>
+<ul>[Message]0 Whole Trigger string.</ul>
+<ul>[Value 1]1 value1</ul>
+<ul>[Value +]2+ for as many values as the extension trigger transmited</ul>
+<p><strong>Field: Turn to Real</strong></p>
+<ul>Decide if the value pulled should be turned into a real value or remain as a string, if turned into a real and no numbers are present or letters are present, it will just return 0.</ul>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="stringwildcardpull">String: Wildcard pull</span></h3>
+<p>Use this with Chat message/redeem with message/extension trigger to get whatever is in the wild card.</p>
+<p>For example...</p>
+<p>If your Chat Trigger is  "!set*to*" and you send "!set color to 30". You can get what is covered by the * symbol<p>
+<p>In this case it would be <strong>color</strong> for the first wildcard and <strong>30</strong> for the second, this would include the spaces as well.<p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to store the pull in.</ul>
+<p><strong>Field: Wildcard number</strong></p>
+<ul>This refers to which * you wish to get, 0 will be the first one and so on.</ul>
+<p><strong>Field: Turn to Real</strong></p>
+<ul>Decide if the value pulled should be turned into a real value or remain as a string, if turned into a real and no numbers are present or letters are present, it will just return 0.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringgettriggertype">String: Get Trigger Type</span></h3>
+<p>This will return the type of trigger that activated the button, can be usefull to know which math: trigger pull to use.</p>
+<p>Possible return (Capitalization included)</p>
+<ul><strong>Bits</strong></ul>
+<ul><strong>Sub</strong></ul>
+<ul><strong>Redeem</strong></ul>
+<ul><strong>Chat message</strong></ul>
+<ul><strong>Host</strong></ul>
+<ul><strong>Raid</strong></ul>
+<ul><strong>Redeem with message</strong></ul>
+<ul><strong>Extension</strong></ul>
+<ul><strong>Gifted sub</strong></ul>
+<ul><strong>Other</strong> (This will be returned for any non-listed trigger such as through stream deck/command trigger/Shortcut trigger)</ul>
+
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to store in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringlength">String: Length</span></h3>
+<p>Return the length or a string(a real)</p>
+<p>"hello" will return 5 "" will return 0;</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the length value.</ul>
+<p><strong>Field: String Variable</strong></p>
+<ul>Name of the Variable containing the string that you wish to know the length of.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringformat">String: Format</span></h3>
+<p>Divide a string into multiple lines</p>
+<p>the new line will be compensated with \n</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the new string under.</ul>
+<p><strong>Field: String</strong></p>
+<ul>String to format.</ul>
+<p><strong>Field: Max Width</strong></p>
+<ul>An arbitrary number, this is technically a pixel width but you will have to test to see what you receive back</ul>
+<p><strong>Field: Max Word Length</strong></p>
+<ul>If a word is too long, this is the amount of character to tolerate before cutting it in the middle</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringdigits">String: Digits</span></h3>
+<p>Turn a string Variable into a digits only string. getting rid of all letters and other symbol.</p>
+<p>"hello" will return "",  "1a2b3b" will return "123", "No -12.234 value" will return "-12.234",</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable containing the string that needs to be converted to digits only.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringletters">String: Letters</span></h3>
+<p>Remove every non letters from a string.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable containing the string that needs to have every non letters removed.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringreplace">String: Replace</span></h3>
+<p>Replace all the instance </p>
+<p>{"Hello","l","\"} will return "He\\o",</p>
+<p>{"Hello","e","33"} will return "H33llo",</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable containing the string that needs some string replaced</ul>
+<p><strong>Field: Replace</strong></p>
+<ul>the string you wish to replace.</ul>
+<p><strong>Field: New String</strong></p>
+<ul>the new string to replace the string by, can be an empty string to remove it entirely.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringlowercase">String: Lower Case</span></h3>
+<p>Turn a string value into the same string but change all upper case letter to lower case one</p>
+<p>"HELLO" will return "hello",</p>
+<p><strong>Field: Value Name</strong></p>
+<ul>Name of the value containing the string that needs to be lower case'd.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringuppercase">String: Upper Case</span></h3>
+<p>Turn a string value into the same string but change all lower case letter to upper case one</p>
+<p>"hello" will return "HELLO",</p>
+<p><strong>Field: Value Name</strong></p>
+<ul>Name of the value containing the string that needs to be upper case'd.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringposition">String: Position</span></h3>
+<p>Return the position of a string within a string and save it as the Variable</p>
+<p>If the string is not found, it will return 0.</p>
+<p>Exemple, {string_pos,Hello World,llo} will return 3 and save it as string_pos</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the position number at</ul>
+<p><strong>Field: String</strong></p>
+<ul>String to look inside of</ul>
+<p><strong>Field: Find String</strong></p>
+<ul>String to look for</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringcount">String: Count</span></h3>
+<p>Return the amount of occurence of a string withing a string</p>
+<p>If you search for AbAb within the string AbAbAbAb it will return 3. 4 if you just search A</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the count</ul>
+<p><strong>Field: String</strong></p>
+<ul>String to look inside of</ul>
+<p><strong>Field: Count String</strong></p>
+<ul>String to look for and count</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringclamp">String: Clamp</span></h3>
+<p>Cut a string into a smaller version of that that,</p>
+<p>{"Hello",1,2} will return "He"    {"Hello",2,3} will return "ell" </p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable containing the string to clamp.</ul>
+<p><strong>Field: Start</strong></p>
+<ul>Where to start the clamp, 1 = include the first letter in the final string.</ul>
+<p><strong>Field: Count</strong></p>
+<ul>Amount of letters to include in the string.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringescape">String: Escape</span></h3>
+<p>Turn a string into a string ready to be inserted in a JSON string.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to be escaped.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringrealtostring">String: Real to String</span></h3>
+<p>Turn a real value into a string</p>
+<p>-1.2 will return "-1.20", 1.12345 will return "1.12"</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the real string.</ul>
+<p><strong>Field: Real Variable</strong></p>
+<ul>Name of the Variable containing the real to be stringify.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stringsoundnamepull">string: Sound Name Pull</span></h3>
+<p>Pull the name of the sounds that were played by this button.</p>
+<p>The name returned will only be the file name without the path so sound/horn.ogg will return horn.ogg.</p>
+<p>All the sound played can be obtained right away even if the sound has a delay on it, the name can be fetch as soon as the button is pressed.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to store the pull in.</ul>
+<p><strong>Field: Array Number</strong></p>
+<ul>which sound to get in order they appear in the list, 0 will be the one at the top of the list.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackaddnew">Stack: Add (new)</span></h3>
+<p>Add a value to a given stack, will create the stack if it doesn't exists.</p>
+<p>Stacks are just like values but work a bit like an array</p>
+<p>Stacks aren't saved if you close lioranboard, you can use Stack: Stringify for that</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Position to add the value. top will add it at the top of the stack, 0 will be bottom.</ul>
+<ul>any number higher than the stack size will be regarded as the top</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+</ul>
+
+
+
+<hr> </hr> <ul>
+<h3><span id="stackreplacenew">Stack: Replace (new)</span></h3>
+<p>Replace a value inside a stack, deleting the previous one replacing it by the new one.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Position to be replaced. top for the top of the stack, number higher than the stack will be ignored</ul>
+<p><strong>Field: Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed.</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackpull">Stack: Pull</span></h3>
+<p>Pull a value from the stack deleting it from the stack and saving it inside the selected value name.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Position to pull from.  you can just put <strong>top</strong> to pull the top of the stack, 0 for bottom</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the value under.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackpeek">Stack: Peek</span></h3>
+<p>Read a value from the stack and save it inside the selected value name.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Position to read from.  you can just put <strong>top</strong> to read the top of the stack, 0 for bottom</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the value under.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackfindnew">Stack: Find (new)</span></h3>
+<p>Find the first instance of a specifict value inside a stack</p>
+<p>Will return -1 if not found.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the position of the find</ul>
+<p><strong>Field: Find  Var./real/"string"</strong></p>
+<ul>This box can take entire a direct number(a real), some text(a string),a stack value or a variable name(variable can contain either).</ul>
+<ul>To enter a real just simply put numbers. such as 0 or 100 or -0.0123.</ul>
+<ul>To enter a string just put whatever text you want and put it between quotation mark, either " or ' so "here is a string".</ul>
+<ul>To enter a stack value put the stack name with [x] before, so [3]stackname to get value number 3 from stack named stackname, [1+variable*10]stackname is allowed</ul>
+<ul>For a variable just put anything else that is letters or _ . So a variable name must start with a letter or _ but may contain numbers as long as it does not start with numbers.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackgetsize">Stack: Get Size</span></h3>
+<p>return the size of a stack and saves it as the Variable.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the size of the stack.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackrandom">Stack: Random</span></h3>
+<p>Pick a random value inside the stack.</p>
+<p>there is a hidden feature for this command, If you create a second stack with the same name but _weight added to it.</p>
+<p>so stackname_weight you can add values to that list to give weight to the randomization.</p>
+<p>Exemple</p>
+<p>Stack 1: video_list = [0.avi] [1.avi] [2.avi]</p>
+<p>Stack 2: video_list_weight = [200] [50] [20]</p>
+<p>0.avi will happen 4 times more than 1.avi and 10 times more than 2.avi, in general, this is still randomized.</p>
+<p>if no _weight stack is found or the _weight stack is not the same size, the randomization will be normal and all equal chance.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the value.</ul>
+<p><strong>Field: Variable(position)</strong></p>
+<ul>If you wish to get the position of the value aswell you can enter another Variable, leave blank if you dont need this.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackshuffle">Stack: Shuffle</span></h3>
+<p>Shuffle a stack, randomizing the order of everything in it.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="stackclear">Stack: Clear</span></h3>
+<p>Delete an entire stack.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack to delete.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackstringify">Stack: Stringify</span></h3>
+<p>Return a JSON string of the whole stack</p>
+<p>values will be listed as "0" for first value and so on</p>
+<p>"name" and "size" will also be included</p>
+<p>You can use this to either duplicate a stack or save it.</p>
+<p>Keep in mind you will not be able to save this string using File: Save String without</p>
+<p>using String: Replace first to replace all the " to another character</p>
+<p>I suggest replacing them to some obscure character such as Ø</p>
+<p>When loading it again replacing them all back to " before parsing.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack to stringify, will return an empty string if the stack is empty or does not exists</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the string as.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackparse">Stack: Parse</span></h3>
+<p>Turn a JSON string into a stack</p>
+<p>The json must contain "size" and the right amount of values else it will not work</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack to stringify, will return an empty string if the stack is empty or does not exists</ul>
+<p><strong>Field: String</strong></p>
+<ul>JSON format string.</ul>
+<ul>either /$stringified_stack$/ or direct json string {"size":3,"0":123,"1":456,"2":"Hello World"}</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stacksort">Stack: Sort</span></h3>
+<p>Reorder a stack in alphabetical order or in numerical order.</p>
+<p>The stack must be only String or Only Reals.</p>
+<p>The script will look at the first value in the list and sort accordingly.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackconcat">Stack: Concat</span></h3>
+<p>Append a whole stack at the end of another stack.</p>
+
+<p><strong>Field: Stack Name</strong></p>
+<ul>The stack that we will be appending to.</ul>
+<ul>Will create it if it doesnt exists.</ul>
+<p><strong>Field: Stack Concat</strong></p>
+<ul>The stack to append at the end of the main stack</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="getalternateaccountinfo">Get Alternate Account Info</span></h3>
+<p>Get information for alternate accounts you may have linked</p>
+<p>Channel id may not be available, the transmitter has to have been</p>
+<p>connected for a few seconds before you can get it.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>variable to store the data into.</ul>
+<p><strong>Field: Account Slot</strong></p>
+<ul>slot of the account, between 1 and 10.</ul>
+<p><strong>Field: Type</strong></p>
+<ul>Type of data to get Channel Id, Login Name or Oauth token.</ul>
+<ul><strong>WARNING: Make sure that if you pull the oauth token that you clear the variable after it as been used</strong></ul>
+<ul><strong>Else you run the risk of showing your Oauth token on stream.</strong></ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="setclipboard">Set Clipboard</span></h3>
+<p>Change the content of the clipboard to whatever is in the string box</p>
+<p>(That's the ctrl+c thing you might use in other programs)</p>
+<p><strong>Field: String</strong></p>
+<ul>the string you wish to put in the clipboard.</ul>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="loadclipboard">Load Clipboard</span></h3>
+<p>Load the content of a clipboard into a value name</p>
+<p>only works for string.</p>
+<p><strong>Field: Value Name</strong></p>
+<ul>Name of the value to save the string under.</ul>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="twitchchatmessage">Twitch: Chat Message</span></h3>
+<p>Send a message over the chat.</p>
+<p>This coupled with Math: Trigger Pull and Twitch chat triggers can be a very powerful tool, use wisely, make sure your implementation won't spam your own chat.</p>
+<p><strong>Field: Message</strong></p>
+<ul>The message to be sent over the chat.</ul>
+<p><strong>Field: Channel Name</strong></p>
+<ul>Channel to send the message to, this should be left blank unless you are dealing with multiple accounts at the same time.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="twitchopenwhispers">Twitch: Open Whispers</span></h3>
+<p>Allow whispers to come in, Whisper will be received as normal Chat message triggers.</p>
+<p>The only difference is that Math: Trigger Pull 5 will return w for channel name</p>
+<p><strong>Field: Allow Whispers</strong></p>
+<ul>True or false, currently twitch offers no way to turn it off so false won't do anything.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="twitchjoinchannel">Twitch: Join Channel</span></h3>
+<p>Join any channel you'd like.</p>
+<p><strong>Field: Channel Name</strong></p>
+<ul>Any twitch account, must be the login name not display name.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="twitchleavechannel">Twitch: Leave Channel</span></h3>
+<p>Leave a channel you've join, you can even leave your own channel.</p>
+<p><strong>Field: Channel Name</strong></p>
+<ul>Any twitch account, must be the login name not display name.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="buffercreate">Buffer: Create</span></h3>
+<p>Create a buffer of a given name</p>
+<p>you can write data to this buffer to save them. The data you save in a buffer are raw binary format that you structure yourself.</p>
+<p>The buffer will remain in the ram until you delete it, close or reset lioranboard.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Size</strong></p>
+<ul>Size of the buffer, in Byte.</ul>
+<p><strong>Field: Type</strong></p>
+<ul>How the buffer should behave.</ul>
+<ul><strong>Fixed</strong> will be a fixed size and will crash when you reach the limit size.</ul>
+<ul><strong>Grow</strong> will grow to the next power of 2 size when you reach the current size.</ul>
+<ul><strong>Wrap</strong> will wrap back to position 0 when reached the size of the buffer.</ul>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="bufferdelete">Buffer: Delete</span></h3>
+<p>Delete a buffer you created or loaded.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="bufferload">Buffer: Load</span></h3>
+<p>Load any file as a buffer and save the buffer id in a variable.</p>
+<p>Read/Write head position will be 0.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Path</strong></p>
+<ul>File name to load.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="buffersave">Buffer: Save</span></h3>
+<p>Save a buffer as a file. The file saved will be raw date from the buffer directly.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Path</strong></p>
+<ul>File name to load.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="buffersetposition">Buffer: Set Position</span></h3>
+<p>Set the position of the read/write head of a buffer.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Value to set the position of the head at.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="buffergetposition">Buffer: Get Position</span></h3>
+<p>Return the position of a buffer's read/write head.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the position value in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="buffersetsize">Buffer: Set Size</span></h3>
+<p>Set the size of a buffer to a new size.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Size</strong></p>
+<ul>New size of the buffer</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="buffergetsize">Buffer: Get Size</span></h3>
+<p>Return the size of a buffer.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the size value in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="bufferexists">Buffer: Exists</span></h3>
+<p>Check if a buffer exists and save the result in a variable. 0=doesn't exists  1=exists</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the result in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="bufferbase64encode">Buffer: Base64 Encode</span></h3>
+<p>Turn a whole buffer into a string.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the string value in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="bufferbase64decode">Buffer: Base64 Decode</span></h3>
+<p>Create a buffer from a base64 string.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Base64 String</strong></p>
+<ul>a base64 string to decode and turn into a buffer.</ul>
+</ul>
+<hr> </hr> <ul>
+<h3><span id="bufferwrite">Buffer: Write</span></h3>
+<p>Write data to a buffer at the position of the read/write head.</p>
+<p>Writing data to a buffer will advance the position of the head by however many bytes it wrote.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Data Type</strong></p>
+<ul>Type of data to Write.</ul>
+<ul><strong>Unsigned 8bits</strong> a single byte value between 0 and 255.</ul>
+<ul><strong>Signed 8bits</strong> a single byte value between -127 and 127.</ul>
+<ul><strong>Unsigned 16bits</strong> 2 bytes value between 0 and 65535.</ul>
+<ul><strong>Signed 16bits</strong> 2 bytes value between -32767 and 32767.</ul>
+<ul><strong>Unsigned 32bits</strong> 4 bytes value between 0 and 4294967295.</ul>
+<ul><strong>Signed 32bits</strong> 4 bytes value between -2147483647 and 2147483647.</ul>
+<ul><strong>Float 32bits</strong> 4 bytes value between -2147483647 and 2147483647 that can contain decimal points numbers.(the number is less and less accurate the bigger it becomes)</ul>
+<ul><strong>Float 64bits</strong> 8 bytes value between 1-2^63 and 2^63 that can contain decimal points numbers.(the number is less and less accurate the bigger it becomes)</ul>
+<ul><strong>Boolean</strong> a single value, save true or false(0/1)</ul>
+<ul><strong>String</strong> save some text with a finishing nul value(0).</ul>
+<ul><strong>Text</strong> save some text WITHOUT a finishing nul value(can not be used for Peak or Read).</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>The data to right to a buffer</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="bufferread">Buffer: Read</span></h3>
+<p>Read data from a buffer at the position of the read/write head.</p>
+<p>Reading data from a buffer will advance the position of the head by however many bytes it read.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Data Type</strong></p>
+<ul>Type of data to read.</ul>
+<ul><strong>Unsigned 8bits</strong> a single byte value between 0 and 255.</ul>
+<ul><strong>Signed 8bits</strong> a single byte value between -127 and 127.</ul>
+<ul><strong>Unsigned 16bits</strong> 2 bytes value between 0 and 65535.</ul>
+<ul><strong>Signed 16bits</strong> 2 bytes value between -32767 and 32767.</ul>
+<ul><strong>Unsigned 32bits</strong> 4 bytes value between 0 and 4294967295.</ul>
+<ul><strong>Signed 32bits</strong> 4 bytes value between -2147483647 and 2147483647.</ul>
+<ul><strong>Float 32bits</strong> 4 bytes value between -2147483647 and 2147483647 that can contain decimal points numbers.(the number is less and less accurate the bigger it becomes)</ul>
+<ul><strong>Float 64bits</strong> 8 bytes value between 1-2^63 and 2^63 that can contain decimal points numbers.(the number is less and less accurate the bigger it becomes)</ul>
+<ul><strong>Boolean</strong> a single value, save true or false(0/1)</ul>
+<ul><strong>String</strong> save some text with a finishing nul value(0).</ul>
+<ul><strong>Text</strong> save some text WITHOUT a finishing nul value(can not be used for Peak or Read).</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the data you're reading</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="bufferpeek">Buffer: Peek</span></h3>
+<p>Read data to a given position without affecting the position of the read/write head.</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Data Type</strong></p>
+<ul>Type of data to read.</ul>
+<ul><strong>Unsigned 8bits</strong> a single byte value between 0 and 255.</ul>
+<ul><strong>Signed 8bits</strong> a single byte value between -127 and 127.</ul>
+<ul><strong>Unsigned 16bits</strong> 2 bytes value between 0 and 65535.</ul>
+<ul><strong>Signed 16bits</strong> 2 bytes value between -32767 and 32767.</ul>
+<ul><strong>Unsigned 32bits</strong> 4 bytes value between 0 and 4294967295.</ul>
+<ul><strong>Signed 32bits</strong> 4 bytes value between -2147483647 and 2147483647.</ul>
+<ul><strong>Float 32bits</strong> 4 bytes value between -2147483647 and 2147483647 that can contain decimal points numbers.(the number is less and less accurate the bigger it becomes)</ul>
+<ul><strong>Float 64bits</strong> 8 bytes value between 1-2^63 and 2^63 that can contain decimal points numbers.(the number is less and less accurate the bigger it becomes)</ul>
+<ul><strong>Boolean</strong> a single value, save true or false(0/1)</ul>
+<ul><strong>String</strong> save some text with a finishing nul value(0).</ul>
+<ul><strong>Text</strong> save some text WITHOUT a finishing nul value(can not be used for Peak or Read).</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the data you're peeking</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Position to peek at</ul>
+</ul>
+
+
+<hr> </hr> <ul>
+<h3><span id="buffersha1hash">Buffer: SHA1 Hash</span></h3>
+<p>return an hash from a buffer</p>
+<p>the data will be analized from 0 to Size of the buffer</p>
+<p><strong>Field: Buffer Name</strong></p>
+<ul>Name of the buffer.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the sha1 string in.</ul>
+
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="fileloadvalue">File: Load Value</span></h3>
+<p>Load a real value from a file, will return 0 if non existing.</p>
+<p>Structure of the file.</p>
+<p>[Section_name]</p>
+<p>key1_name="0.000000"</p>
+<p>key2_name="2.000000"</p>
+<p><strong>Field: File Name</strong></p>
+<ul>Name of the file, Can only be a ini file.</ul>
+<ul>You can include or not the extension. "name_list" and "name_list.ini" will have the same result, "name_list.txt" will result in "name_list.txt.ini"</ul>
+<p><strong>Field: Section</strong></p>
+<ul>The section to load the key from.</ul>
+<p><strong>Field: Key</strong></p>
+<ul>what the name of the value is.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable</strong> or will be created here if does not exist</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="filesavestring">File: Save String</span></h3>
+<p>Save a string to a file.</p>
+<p>Structure of the file.</p>
+<p>[Section_name]</p>
+<p>key1_name="String"</p>
+<p>key2_name="more string"</p>
+<p><strong>Field: File Name</strong></p>
+<ul>Name of the file, Can only be a ini file. Will create the it if it does not exists.</ul>
+<ul>You can include or not the extension. "name_list" and "name_list.ini" will have the same result, "name_list.txt" will result in "name_list.txt.ini"</ul>
+<p><strong>Field: Section</strong></p>
+<ul>The section to save the key under.</ul>
+<p><strong>Field: Key</strong></p>
+<ul>What to call the string to be saved.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="fileloadstring">File: Load String</span></h3>
+<p>Load a string value from a file, will return 0 if non existing.</p>
+<p>Structure of the file.</p>
+<p>[Section_name]</p>
+<p>key1_name="String"</p>
+<p>key2_name="more string"</p>
+<p><strong>Field: File Name</strong></p>
+<ul>Name of the file, Can only be a ini file.</ul>
+<ul>You can include or not the extension. "name_list" and "name_list.ini" will have the same result, "name_list.txt" will result in "name_list.txt.ini"</ul>
+<p><strong>Field: Section</strong></p>
+<ul>The section to load the key from.</ul>
+<p><strong>Field: Key</strong></p>
+<ul>what the name of the string is.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable</strong> or will be created here if does not exist</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="filedeletesection">File: Delete Section</span></h3>
+<p>Delete a whole section created from File: Save command</p>
+<p>This will delete the given section along with all the keys inside of it.</p>
+<p><strong>Field: File Name</strong></p>
+<ul>Name of the file, Can only be a ini file.</ul>
+<ul>You can include or not the extension. "name_list" and "name_list.ini" will have the same result, "name_list.txt" will result in "name_list.txt.ini"</ul>
+<p><strong>Field: Section</strong></p>
+<ul>The section to delete.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="filedeletekey">File: Delete Key</span></h3>
+<p>Delete a key within a given section created from File: Save command</p>
+<p><strong>Field: File Name</strong></p>
+<ul>Name of the file, Can only be a ini file.</ul>
+<ul>You can include or not the extension. "name_list" and "name_list.ini" will have the same result, "name_list.txt" will result in "name_list.txt.ini"</ul>
+<p><strong>Field: Section</strong></p>
+<ul>The section to find the key.</ul>
+<p><strong>Field: Key</strong></p>
+<ul>Key to delete.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="filesectionexists">File: Section Exists</span></h3>
+<p>Check if a section exists within a saved file.</p>
+<p>will return 0 if does not exists and 1 if it exists.</p>
+<p><strong>Field: File Name</strong></p>
+<ul>Name of the file, Can only be a ini file.</ul>
+<ul>You can include or not the extension. "name_list" and "name_list.ini" will have the same result, "name_list.txt" will result in "name_list.txt.ini"</ul>
+<p><strong>Field: Section</strong></p>
+<ul>Name of the section to look for.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the result in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="filekeyexists">File: Key Exists</span></h3>
+<p>Check if a Key exists within a given section of a saved file.</p>
+<p>will return 0 if does not exists and 1 if it exists.</p>
+<p><strong>Field: File Name</strong></p>
+<ul>Name of the file, Can only be a ini file.</ul>
+<ul>You can include or not the extension. "name_list" and "name_list.ini" will have the same result, "name_list.txt" will result in "name_list.txt.ini"</ul>
+<p><strong>Field: Section</strong></p>
+<ul>Section to look inside of.</ul>
+<p><strong>Field: Key</strong></p>
+<ul>name of the key you wish to see exists or not.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the result in.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="triggerbutton">Trigger Button</span></h3>
+<p>Trigger any button of a given ID. To get a button's ID you can right click it to see its ID.</p>
+<p>Buttons can not have the same ID. If you paste a button it will have a new ID unless you deleted the original one.</p>
+<p><strong>Field: Button ID</strong></p>
+<ul>ID of a button gotten by right clicking them.</ul>
+<p><strong>Field: Queue-Able</strong></p>
+<ul>If this is set to false and the button is already ongoing. Nothing will happen. If this is set to true and the button is already ongoing. It will wait for it to finish and do it again. can be queue'd as many times as you press it. If you press it 10 times. it will happen 10 times</ul>
+<p><strong>Field: Hidden Delay</strong></p>
+<ul>This delay is hidden and can not be cancelled (Reset and Done button will clear them still)</ul>
+<ul>Why does this exist? This exist to make a button happen without graying it out incase the button is showing valuable informations.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="modifybutton">Modify Button</span></h3>
+<p>Change the appearance of a button, color/text/image/border size</p>
+<p>All Changes done are temporary, they do not modify your files.</p>
+<p>To reset the button back to its default appearance set the value to </p>
+<p>{button_id,-1,-1,-1,notext, ,-1}</p>
+<p><strong>Field: Button ID</strong></p>
+<ul>Button Id to change the appearance</ul>
+<p><strong>Field: Red</strong></p>
+<ul>Red value 0-255, -1 for default color.</ul>
+<p><strong>Field: Green</strong></p>
+<ul>Green value 0-255</ul>
+<p><strong>Field: Blue</strong></p>
+<ul>Blue value 0-255</ul>
+<p><strong>Field: Text</strong></p>
+<ul>New text to change to, enter <strong>notext</strong> to use default</ul>
+<ul>using # symbol for new line is a bit buggy right now if you want to have new line i'd suggest just copy pasting your text</ul>
+<p><strong>Field: Picture</strong></p>
+<ul>Picture to use, leave empty to use default</ul>
+<ul>Must be the file name such as image.png, do not include folder name.</ul>
+<ul>The image must be in the image folder.</ul>
+<p><strong>Field: Border Size</strong></p>
+<ul>Size of the border, between 0-8, only apply if a picture is included, -1 to use default border size.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="clearbutton">Clear Button</span></h3>
+<p>Clear the given id or all buttons</p>
+<p>Can choose to clear queue aswell.</p>
+<p>If you clear all buttons, you can specify to clear the button performing this task itself. </p>
+<p><strong>Field: Button ID</strong></p>
+<ul>Button Id to clear(does not include group id)</ul>
+<p><strong>Field: Ongoing</strong></p>
+<ul>If the ongoing button should be cleared</ul>
+<p><strong>Field: Queue</strong></p>
+<ul>If the queue should be cleared</ul>
+<p><strong>Field: Self</strong></p>
+<ul>If the button id is all, you can set this value to include or not include the button</ul>
+<ul>Does not work if the button id is itself, just dont select True for ongoing if you want that effect</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="blockbutton">Block Button</span></h3>
+<p>Block a button by its ID or an entire Group ID.</p>
+<p>Won't cancel ongoing button but will prevent any already existing queue from happening when their turn come.</p>
+<p>If allow queue is true, the queue will wait for it to be unblocked and then will continue as normal</p>
+<p>If allow queue is false, the queue will just be deleted when their turn comes.</p>
+<p>The block will not be remembered if lioranboard is restarted</p>
+<p>by setting the ID to <strong>all</strong> you can remove all current blocks.(doesn't work for block all)</p>
+<p><strong>Field: Button ID or Group ID</strong></p>
+<ul>Button Id or Group ID to block</ul>
+<p><strong>Field: Block</strong></p>
+<ul>True or False</ul>
+<p><strong>Field: Allow Queue</strong></p>
+<ul>True or False</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="openurl">Open URL</span></h3>
+<p>Open a URL in your default browser. </p>
+<p>Must contain http or https or it will show an error. </p>
+<p><strong>Field: URL</strong></p>
+<ul>URL to open, must be a full link. twitch.tv will not work it has to be https://twitch.tv</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="overtime">Overtime</span></h3>
+<p>This is just a utility command meant to artificially increase the duration of a button so you cant execute it again or can't be triggered. </p>
+<p><strong>Field: Overtime Duration(ms)</strong></p>
+<ul>The amount of time the overtime should last.</ul>
+<ul>Keep in mind the count down starts right away not when the button would normally end.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="executeprogram">Execute Program</span></h3>
+<p>Run a program from your PC. </p>
+<p>It can also run some files.</p>
+<p>Note: If Lioranboard is running as admin, every program you run thruogh this will also run as admin.</p>
+<p><strong>Field: File Path</strong></p>
+<ul>Path of the exe file you wish to run, Must be the full path.</ul>
+<ul>Exemple: C:\Program Files (x86)\Steam\steam.exe</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="commandline">Command Line</span></h3>
+<p>Can send a command line like you do in command prompt</p>
+<p>Note: If Lioranboard is running as admin, commands you perform will also run as admin.</p>
+<p><strong>Field: Command</strong></p>
+<ul>Command to execute</ul>
+<ul>Exemple: taskkill /im "lioranboard receiver.exe" /t /f</ul>
+<ul>This command will close lioranboard and every program that was run using Execute Program</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="sendtoextension">Send to Extension</span></h3>
+<p>This is the command you use to send data to a javascript extension</p>
+<p>If you wish to create your own extension look at extension/readme.txt.</p>
+<p>Depending on what you select for the Extension value may change.</p>
+<p>comes with 3 extension, Follower alert,Bits leaderboard and stream change title+game</p>
+<p><strong>Field: Extension</strong></p>
+<ul>JSON string to send to your extension. must be in json format and must include {} on both side</ul>
+<ul>Exemple: {"datatype":0,"value":321.2,"name":"Robert"}</ul>
+<p><strong>Field: Various values</strong></p>
+<ul>All the box coming after will be dependent on the extension maker</ul>
+<ul>If you select Manual extension, it will be treated differently to send JSON string to the transmitter directly</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="getdate">Get Date</span></h3>
+<p>Return a string of the date with everything you'Ve selected</p>
+
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the string in.</ul>
+<p><strong>Field: Year</strong></p>
+<ul>Include the year.</ul>
+<p><strong>Field: Month</strong></p>
+<ul>Include the Mont name.</ul>
+<p><strong>Field: Day</strong></p>
+<ul>Include month day number.</ul>
+<p><strong>Field: Week day</strong></p>
+<ul>Include the name of the week day.</ul>
+<p><strong>Field: Hour</strong></p>
+<ul>Include the Hour.</ul>
+<p><strong>Field: Minute</strong></p>
+<ul>Include the Minute.</ul>
+<p><strong>Field: Second</strong></p>
+<ul>Include the Second.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="getfilesha1hash">Get File SHA1 Hash</span></h3>
+<p>Return the SHA1 hash of a file</p>
+<p>this way you can verify the hash of a file to make sure it was unaltered</p>
+<p>LioranBoard must be able to access the file normally to be able to read the file.</p>
+<p>If it fails it will return an empty string</p>
+<p><strong>Field: File</strong></p>
+<ul>the full path of the file.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Variable to save the hash under(a string).</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="copylocalfile">Copy Local File</span></h3>
+<p>This will copy a file inside the receiver folder to inside the receiver folder.</p>
+<p>What's the point of that? This is for extension maker for people to be able to transfer files from</p>
+<p>a custom folder to the image or sound folder.</p>
+<p>Won't replace the file if one is already present.</p>
+<p>The copy might work from anywhere if the received is engaged as "Local" but anti virus might take action so don't bother.</p>
+<p><strong>Field: Local File Path</strong></p>
+<ul>The full path+file name of the file you wish to copy.</ul>
+<p><strong>Field: Local Folder Destination</strong></p>
+<ul>this is just where you want to copy it inside the receiver folder.</ul>
+<ul>if you wish to put it in the sound folder just put  sound\ and image\ for the image folder.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="popupmessage">Popup Message</span></h3>
+<p>This will show a window popup message.</p>
+<p>This is for people that make extension and such to debug or notify the user of something important.</p>
+<p>Will not freeze the receiver but use it carefully.</p>
+<p><strong>Field: Message</strong></p>
+<ul>The message you want to show, you can use # to add a new line \# to show a normal #.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="alertmessage">Alert Message</span></h3>
+<p>This will show a small alert message at the bottom of the receiver.</p>
+<p>The little yellow messages.</p>
+<p><strong>Field: Message</strong></p>
+<ul>The message you want to show.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="comment">Comment</span></h3>
+<p>This is only to leave a comment in your script</p>
+<p>Even though this doesn't do anything. It has to be counted as a step when using skip/redo/repeat</p>
+<p><strong>Field: Comment</strong></p>
+<ul>Whatever information of value you feel like putting here for you or other user to read.</ul>
+</ul>
+
+</ul>
+
+
+<h1><span id="deprecated">Deprecated commands</span></h1>
+<ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathchangevalueold">Math: Change Variable(old)</span></h3>
+<p>Change or set/create a Variable. If you try to execute math such as += on a variable that was not created it will create it as 0, so consider that when making variables.</p>
+<p>Variables saved with this are Global and any button can access them, they are not unique to the button that made it.</p>
+<p>You can press Tab in the main screen of the receiver to view all the existing Variable, string one will have " on both sides.</p>
+<p>These Variable can be used inserted in any <strong>Command Parametter</strong> box that you can write in text.</p>
+<p><strong>/$variable_name$/</strong> Will be replaced by what's inside variable_name, If it doesn't exist, it will be 0.</p>
+<p>For exemple you can do this for a Filter setting. <strong>{"db":/$volume_level$/}</strong> and the DB will be set to volume_level.</p>
+
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string), can be anything you like including space and numbers</ul>
+<p><strong>Field: Math</strong></p>
+<ul>Type of math to execute on the vable.</ul>
+<p><strong>Field: Value</strong></p>
+<ul>Number to process or set in the math, must be a direct value can not be a value name, use <strong>Math: Variable to Variable</strong> for that</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="mathvaluetovalue">Math: Variable to Variable</span></h3>
+<p>Same as <strong>Math: Change Variable</strong> but process 2 different Variable rather then 1 Variable and a direct values</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string), can be anything you like including space and numbers</ul>
+<p><strong>Field: Math</strong></p>
+<ul>Type of math to execute on the Variables.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) to process or set in the math</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackadd">Stack: Add</span></h3>
+<p>Add a value to a given stack, will create the stack if it doesn't exists.</p>
+<p>Stacks are just like values but work a bit like an array</p>
+<p>Stacks aren't saved if you close lioranboard, you can use Stack: Stringify for that</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Position to add the value. top will add it at the top of the stack, 0 will be bottom.</ul>
+<ul>any number higher than the stack size will be regarded as the top</ul>
+<p><strong>Field: Value</strong></p>
+<ul>The value to save, either a number or a string.</ul>
+<p><strong>Field: Real</strong></p>
+<ul>Specify if a real or a string, True=real or False=string.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackreplace">Stack: Replace</span></h3>
+<p>Replace a value inside a stack, deleting the previous one replacing it by the new one.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Position</strong></p>
+<ul>Position to be replaced. top for the top of the stack, number higher than the stack will be ignored</ul>
+<p><strong>Field: Value</strong></p>
+<ul>The value to save, either a number or a string.</ul>
+<p><strong>Field: Real</strong></p>
+<ul>Specify if a real or a string, True=real or False=string.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="stackfind">Stack: Find</span></h3>
+<p>Find the first instance of a specifict value inside a stack</p>
+<p>Will return -1 if not found.</p>
+<p><strong>Field: Stack Name</strong></p>
+<ul>Name of the stack, a string, can be anything.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable to save the position of the find</ul>
+<p><strong>Field: Find</strong></p>
+<ul>The value to find in the stack, string or real</ul>
+<p><strong>Field: Real</strong></p>
+<ul>specify if the Find value is a real or a string</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="compareskipif">Compare: Skip if</span></h3>
+<p>Prevent the following commands from happening if the math is true</p>
+<p>Does not look at the Millisecond delay. it will just turn off commands below it regardless if they happened or not.</p>
+<p>Obviously if they already happened its gonna turn off something that's already off so it won't do anything to them.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Value</strong></p>
+<ul>Value to compare to the array number.</ul>
+<p><strong>Field: Step</strong></p>
+<ul>Number of commands to skip.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="compareendif">Compare: End if</span></h3>
+<p>Prevent ALL commands from happening if the if is true. Ending the commands prematurely. Does not affect other buttons.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Value</strong></p>
+<ul>Value to compare to the array number.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="compareredoif">Compare: Redo if</span></h3>
+<p>will reactivate the followings commands after it.</p>
+<p>Does not look at the Millisecond delay. it will just turn on commands below it regardless if they happened or not.</p>
+<p>Obviously if they haven't happened its gonna turn on something that's already on so it won't do anything to them.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Value</strong></p>
+<ul>Value to compare to the array number.</ul>
+<p><strong>Field: Step</strong></p>
+<ul>Number of commands to Reactivate.</ul>
+<p><strong>Field: Self</strong></p>
+<ul>To include self in the redo, If this is set to True and the math done is true, it will happen every frame the button is active. If the math is false it won't do anything will never happen again regardless if its true or false.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="compareredopreviousif">Compare: Redo Previous if</span></h3>
+<p>will reactivate the previous commands before it.</p>
+<p>Does not look at the Millisecond delay. it will just turn on commands below it regardless if they happened or not.</p>
+<p>Obviously if they haven't happened its gonna turn on something that's already on so it won't do anything to them.</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Value</strong></p>
+<ul>Value to compare to the array number.</ul>
+<p><strong>Field: Step</strong></p>
+<ul>Number of commands to Reactivate.</ul>
+<p><strong>Field: Self</strong></p>
+<ul>To include self in the redo, If this is set to True and the math done is true, it will happen every frame the button is active. If the math is false it won't do anything will never happen again regardless if its true or false.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="comparevaluesskipif">Compare Variable: Skip if</span></h3>
+<p>Same as Compare: skip if but uses 2 Variables instead of 1 Variable and 1 direct value</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Step</strong></p>
+<ul>Number of commands to skip.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="comparevaluesendif">Compare Variable: End if</span></h3>
+<p>Same as Compare: End if but uses 2 Variables instead of 1 Variable and 1 direct value</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Value Name</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="comparevaluesredoif">Compare Variable: Redo if</span></h3>
+<p>Same as Compare: Redo if but uses 2 Variables instead of 1 Variable and 1 direct value</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Step</strong></p>
+<ul>Number of commands to Reactivate.</ul>
+<p><strong>Field: Self</strong></p>
+<ul>To include self in the redo, If this is set to True and the math done is true, it will happen every frame the button is active. If the math is false it won't do anything will never happen again regardless if its true or false.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="comparevaluesredopreviousif">Compare Variable: Redo Previous if</span></h3>
+<p>Same as Compare: Redo Previous if but uses 2 Variables instead of 1 Variable and 1 direct value</p>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Math</strong></p>
+<ul>Math to Execute.</ul>
+<p><strong>Field: Variable</strong></p>
+<ul>Name of the Variable(a string) made from <strong>Math: Change Variable.</strong></ul>
+<p><strong>Field: Step</strong></p>
+<ul>Number of commands to Reactivate.</ul>
+<p><strong>Field: Self</strong></p>
+<ul>To include self in the redo, If this is set to True and the math done is true, it will happen every frame the button is active. If the math is false it won't do anything will never happen again regardless if its true or false.</ul>
+</ul>
+
+<hr> </hr> <ul>
+<h3><span id="repeatprevious">Repeat Previous</span></h3>
+<p>Repeat the previous commands in the list, so this will re-enable every command prior and go back and do them instantly.</p>
+<p>Unlike Compare: Redo, Repeat will repeat everything instantly, not after the step restart.</p>
+<p>WARNING: if Compare: Redo includes a Repeat in its steps, it will also reset the repeat count to 0, so watch out to not create an infinite loop.</p>
+<p>Same goes for repeat,repeating other repeats.</p>
+<p><strong>Field: Repeat Amount</strong></p>
+<ul>The amount of time the steps should be repeated</ul>
+<p><strong>Field: Repeat Step</strong></p>
+<ul>The Amount of step commands to repeat.</ul>
+</ul>
+
+</ul>
+</div>
+</body>
+</html>

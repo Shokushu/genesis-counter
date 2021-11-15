@@ -1,0 +1,22 @@
+[extension_name]
+Get Channel ID
+[insert_external]
+<div><p>Get Channel ID extension is installed</p></div>
+[insert_command]
+LBSendExtCommand('Get Channel Id', { oauth_token: 'string', name: 'string', Variable: 'string' });
+[insert_hook]
+case "GetChannelId":{
+	GetChannelId(LioranBoardJSON.oauth_token,LioranBoardJSON.name,LioranBoardJSON.Variable);
+}break
+[insert_script]
+function GetChannelId(oauthtoken, loginname, variable) {
+  const url = `https://api.twitch.tv/helix/users?login=${loginname}`;
+  const headers = {
+    Authorization: `Bearer ${oauthtoken}`,
+    'Client-ID': TWITCH_CLIENT_ID,
+  };
+  fetchRequest(url, headers)
+    .then((res) => lioranboardclient.send(`{"type":"MESSAGE","topic":"SetVariable","variable":"${variable}","value":"${res.data[0].id}"}`))
+    .catch((e) => LBAlert(`Get Channel ID Error: ${e}`));
+}
+[insert_over]
